@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-body: #f8f8f8;
+  --color-primary: #F28705;
+  --color-secondary: #038c25;
+  --success: #E0FFCC;
+  --profil-onglet-bg-selected: #707070;
+  --color-tertiary: #000;
+  --color-icone: #58595B
+  --produit-card-bg: #dddddd;
+
+
+  --font-main: 'Montserrat', sans-serif;
+}
+
+body {
+  background: var(--color-body);
+  font-size: var(--font-main);
+}
