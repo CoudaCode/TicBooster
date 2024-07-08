@@ -6,22 +6,115 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <link rel="shortcut icon" href="./image/logo.webp" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100">
-    <header class="bg-white shadow container mx-auto">
+
+     <header class="bg-white shadow container mx-auto">
       <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold text-gray-900"></h1>
       </div>
     </header>
 
     <main class="">
-      <section class="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Nos Produits</h2>
-        <p class="text-gray-700">Ce texte est centré sur la page.</p>
+      <section class="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold font-semibold text-gray-900 mb-6 text-center items-center justify-center">Nos Produits</h2>
+       
         <!-- Ajoutez votre contenu principal ici -->
       </section>
     </main>
+
+<!-- code du produit1 -->
+
+<div class="flex">
+  <!-- Account Sidebar -->
+  <aside class="w-1/4 p-6">
+      <div class="bg-white p-4 shadow-md rounded-lg">
+          <ul>
+              <li class="mb-4">
+                  <span class="bg-gray-600 text-white w-full py-2  text-lg font-bold shadow-md  flex flex-col items-center justify-center uppercase font-sans ">Mon compte</span>
+                  <ul class="ml-4 mt-2 ">
+                      <li class="mb-1 text-white w-full py-1 text-lg font-semibold  flex flex-col items-center justify-center uppercase">
+                          <a href="#" class="text-gray-700">Mon profil</a>
+                      </li>
+                      <li class="mb-2 text-white w-full py-2 text-lg font-semibold  flex flex-col items-center justify-center uppercase">
+                          <a href="#" class="text-gray-700">mot de passe</a>
+                      </li>
+                      
+                  </ul>
+                 
+              </li>
+              <li class="mb-4">
+                  <span class="bg-gray-600 text-white w-full py-2  text-lg font-bold shadow-md  flex flex-col items-center justify-center uppercase">profil artisan</span>
+                  <ul class="ml-4 mt-2 ">
+                      <li class="mb-1 text-white w-full py-1 text-lg font-semibold  flex flex-col items-center justify-center uppercase">
+                          <a href="#" class="text-gray-700 uppercase">Mes offres</a>
+                      </li>
+                     
+                      
+                  </ul>
+                 
+              </li>
+          </ul>
+          
+      </div>
+  </aside>
+
+  <!-- Products Section -->
+  <main class="w-3/4 p-4">
+      <div class="bg-white p-10 shadow-md rounded-lg">
+          <div class="flex justify-end mb-4">
+              <a href="produis2.html" class="bg-green-500 text-white w-full py-10 rounded-full text-2xl font-bold shadow-md  flex flex-col items-center justify-center">
+                  <span>Créer une nouvelle offres</span>
+                  <svg class="w-6 h-6 mt-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Product Card -->
+              <div class="bg-white p-4 rounded">
+                  <a href=""><img src="image/puul.jfif" alt="Produit 1" class="h-58 w-full object-cover mb-4 rounded"></a>
+                  <h2 class="text-xl font-semibold mb-2">Pull pour homme</h2>
+                  <div class="flex items-center justify-between">
+                      <span class="text-gray-500 font-bold">2000 FCFA</span>
+                      <span class="bg-gray-200 p-1 rounded-full text-gray-600">
+                          <!-- Utilisation de l'icône d'œil de FontAwesome -->
+                          <i class="fas fa-eye"></i>
+                      </span>
+                  </div>
+              </div>
+
+              <div class="bg-white p-4 rounded">
+                  <a href=""><img src="image/pull.jfif" alt="Produit 1" class="h-58 w-full object-cover mb-4 rounded"></a>
+                  <h2 class="text-xl font-semibold mb-2">Pull pour homme</h2>
+                  <div class="flex items-center justify-between">
+                      <span class="text-gray-500 font-bold">2000 FCFA</span>
+                      <span class="bg-gray-200 p-1 rounded-full text-gray-600">
+                          <!-- Utilisation de l'icône d'œil de FontAwesome -->
+                          <i class="fas fa-eye"></i>
+                      </span>
+                  </div>
+              </div>
+
+              <div class="bg-white p-4 rounded">
+                  <a href=""><img src="image/pull.jfif" alt="Produit 1" class="h-58 w-full object-cover mb-4 rounded"></a>
+                  <h2 class="text-xl font-semibold mb-2">Pull pour homme</h2>
+                  <div class="flex items-center justify-between">
+                      <span class="text-gray-500 font-bold">2000 FCFA</span>
+                      <span class="bg-gray-200 p-1 rounded-full text-gray-600">
+                          <!-- Utilisation de l'icône d'œil de FontAwesome -->
+                          <i class="fas fa-eye"></i>
+                      </span>
+                  </div>
+              </div>
+              <!-- Répéter pour d'autres produits -->
+          </div>
+      </div>
+  </main>
+</div>
+
+<!-- code du produit1 fini ici -->
 
     <section class="bg-white">
       <footer
