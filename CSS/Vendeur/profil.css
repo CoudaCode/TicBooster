@@ -24,3 +24,17 @@ body {
   background: var(--color-body);
   font-size: var(--font-main);
 }
+.underline-green {
+  position: relative;
+  display: inline-block;
+  width: 75%;
+}
+.underline-green::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Adjust thickness here */
+  background-color: green;
+  bottom: -2px; /* Adjust separation here */
+  left: 0;
+}
