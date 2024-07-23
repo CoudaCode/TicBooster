@@ -1,233 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Vendeur</title>
-    <link rel="stylesheet" href="./../../CSS/Vendeur/profil.css" />
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Produit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  
-   <body class="bg-gray-100">
-    
-      <header class="bg-white shadow container mx-auto">
-        <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold text-gray-900"></h1>
-        </div>
-      </header>
-  
-    
-
-      <div class="container mx-auto p-2">
-        <h1 class="text-3xl font-semibold mb-4 underline-green">Actuellement dans ma boutique</h1>
-
-        <div class="flex flex-wrap -mx-2">
-            <!-- Section des cartes de produits -->
-            <div class="w-full lg:w-3/4 flex flex-wrap">
-                <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                        <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                        <div class="p-4">
-                            <div class="flex items-center mb-2">
-                                <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                                <div class="flex justify-end items-center">
-                                    <div class="text-yellow-500">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-user-alt mr-2"></i>
-                                <span>Innocent Kam</span>
-                                <div class="flex justify-end items-center flex-grow">
-                                    <p class="text-lg font-semibold">56 500 FCFA</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Categories Section -->
+    <div class="bg-white shadow py-4">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div class="text-center">
+                    <img src="../../image/agro1.png" alt="Agroalimentaire, Restauration" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Agroalimentaire, Restauration</p>
                 </div>
-                
-                <!-- Répétez ce bloc pour chaque produit -->
-                
-                    <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                    <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                <div class="p-4">
-                    <div class="flex items-center mb-2">
-                        <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                        <div class="flex justify-end items-center">
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-user-alt mr-2"></i>
-                        <span>Innocent Kam</span>
-                        <div class="flex justify-end items-center flex-grow">
-                            <p class="text-lg font-semibold">56 500 FCFA</p>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <img src="../../image/construction.png" alt="Construction et Bâtiment" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Construction et Bâtiment</p>
+                </div>
+                <div class="text-center">
+                    <img src="../../image/mecanique.jpg" alt="Mécanique, Électromécanique" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Mécanique, Électromécanique</p>
+                </div>
+                <div class="text-center shadow-md ">
+                    <img src="../../image/mobilier.jfif" alt="Mobilier et Ameublement" class="mx-auto text-2xl mb-2 w-12 h-12 ">
+                    <p class="text-sm">Mobilier et Ameublement</p>
+                </div>
+                <div class="text-center">
+                    <img src="../../image/textile.png" alt="Textile, Habillement" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Textile, Habillement</p>
+                </div>
+                <div class="text-center">
+                    <img src="../../image/camera.png" alt="Audiovisuel et Communication" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Audiovisuel et Communication</p>
+                </div>
+                <div class="text-center">
+                    <img src="../../image/hygiene.jpg" alt="Hygiène et Soins Corporels" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Hygiène et Soins Corporels</p>
+                </div>
+                <div class="text-center">
+                    <img src="../../image/art.jpg" alt="Art et Décoration" class="mx-auto mb-2 w-12 h-12">
+                    <p class="text-sm">Art et Décoration</p>
                 </div>
             </div>
-                 </div>
-                    <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                    <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                <div class="p-4">
-                    <div class="flex items-center mb-2">
-                        <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                        <div class="flex justify-end items-center">
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-user-alt mr-2"></i>
-                        <span>Innocent Kam</span>
-                        <div class="flex justify-end items-center flex-grow">
-                            <p class="text-lg font-semibold">56 500 FCFA</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                 </div>
-
-        
-
-                 <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                        <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
-                        <div class="p-4">
-                            <div class="flex items-center mb-2">
-                                <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                                <div class="flex justify-end items-center">
-                                    <div class="text-yellow-500">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-user-alt mr-2"></i>
-                                <span>Innocent Kam</span>
-                                <div class="flex justify-end items-center flex-grow">
-                                    
-                                    <p class="text-lg font-semibold">56 500 FCFA</p>
-                                   
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                
-                
-        
-
-                
-            </div>
-           
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- Section de la carte de profil -->
-            <div class="w-full lg:w-1/4 p-2">
-                <div class="bg-white rounded-lg shadow p-4 relative">
-                    <div class="rounded-full bg-gray-200 w-24 h-24 mx-auto 
-                    mb-4"></div>
-                    <h3 class="text-lg font-semibold text-center">Innocent Kam</h3>
-                    <p class="text-gray-500 text-center">Menuisier - Ébéniste</p>
-                    <div class="text-yellow-500 text-center mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star text-gray-200"></i>
-                        <i class="fas fa-star text-gray-200"></i>
-                    </div>
-                    <div class="text-center">
-                        <button class="text-gray-700 py-2 px-4 rounded mr-2">
-                            <i class="text-2xl fas fa-phone-volume"></i>
-
-                        </button>
-                        <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded">
-                            Message
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            
         </div>
     </div>
 
-   
+    <!-- Products Section -->
+    <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card Template -->
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Conception......... </h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">56 500 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Conception......... </h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">56 500 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Design de Chaise</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">45 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Design de Chaise</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">45 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Design de Chaise</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">45 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Design de Chaise</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">45 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Table de Salon</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">70 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="bg-white rounded-lg shadow relative overflow-hidden">
+                <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
+                <div class="p-4">
+                    <div class="flex items-center mb-2">
+                        <h3 class="text-lg font-semibold flex-grow">Étagère en Bois</h3>
+                        <div class="flex justify-end items-center">
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                                <i class="fas fa-star text-gray-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-user-alt mr-2"></i>
+                        <span>Innocent Kam</span>
+                        <div class="flex justify-end items-center flex-grow">
+                            <p class="text-lg font-semibold">35 000 FCFA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- footer -->
-      <section class="bg-white">
+    <section class="bg-white mt-4">
         <footer
           class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
         >
@@ -386,7 +412,5 @@
           <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
         </footer>
       </section>
-  
-    <script src="./../../JS/Vendeur/profil.js"></script>
-  </body>
+</body>
 </html>

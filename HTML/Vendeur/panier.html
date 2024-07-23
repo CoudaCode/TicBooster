@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>panier</title>
+    <link rel="stylesheet" href="./../../CSS/Vendeur/panier.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+<body class="bg-gray-200 p-4">
+
+
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <a href="#" class="text-sm text-gray-500 underline">Continuer votre achat</a>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Livraison 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <div class="flex items-center">
+                      <div class="bg-gray-900 text-white rounded-full h-8 w-8 flex items-center justify-center">
+                        1
+                      </div>
+                      <span class="ml-3 font-semibold">LIVRAISON</span>
+                    </div>
+                    <div>
+                      <span class="text-gray-500 mr-2">Livraison à :</span>
+                      <span class="font-semibold">Cocody</span>
+                      <svg class="w-4 h-4 inline-block ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                  </div>
+                <form class="mt-8">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="Email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="Email" id="Email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="Email">
+                        </div>
+                        <div>
+                            <label for="Numéro de téléphone" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
+                            <input type="text" id="Numéro de téléphone" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="Numéro de téléphone">
+                        </div>
+                    </div>
+
+
+
+                    <div class="mb-4">
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nom et prénoms</label>
+                        <input type="text" id="name" class="mt-1 block w-full p-2 border border-yellow-500 focus:border-yellow-500 rounded-md shadow-sm" value="Ninja Kas"placeholder="non et prenom">
+                      </div>
+                    
+                      <div class="mb-4">
+                        <label for="address" class="block text-sm font-medium text-gray-700">Adresse</label>
+                        <input type="text" id="address" class="mt-1 block w-full p-2 border border-gray-300 focus:border-gray-700 rounded-md shadow-sm"placeholder="Adresse">
+                      </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="region" class="block text-sm font-medium text-gray-700">Région</label>
+                            <input type="text" id="region" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="region">
+                        </div>
+                        <div>
+                            <label for="city" class="block text-sm font-medium text-gray-700">Ville</label>
+                            <input type="text" id="city" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="ville">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Résumé de la commande -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Résumé de la commande</h2>
+            
+                <!-- Premier produit -->
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="../../image/i (1).webp" alt="Chaise Pro" class="w-16 h-16 object-contain object-center rounded">
+                        <div>
+                            <p class="font-medium">Chaise Pro</p>
+                            <div class="flex items-center space-x-2">
+                                <p class="text-gray-500">Quantité: 2</p>
+                                <button class="text-gray-500 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </button>
+                                
+                                <button class="text-gray-500 focus:outline-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500">300 000 FCFA</p>
+                </div>
+            
+                <!-- Deuxième produit -->
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center space-x-4">
+                        <img src="../../image/i (1).webp" alt="Chaise Delux" class="w-16 h-16 object-contain object-center rounded">
+                        <div>
+                            <p class="font-medium">Chaise Delux</p>
+                            <div class="flex items-center space-x-2">
+                                <p class="text-gray-500">Quantité: 2</p>
+                                <button class="text-gray-700 focus:outline-none text-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </button>
+                              
+                                <button class="text-gray-700 focus:outline-none text-3xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-500">200 000 FCFA</p>
+                </div>
+            
+                <!-- Autres éléments du résumé de la commande -->
+                <div class="border-t border-gray-300 my-4"></div>
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-medium">Montant</p>
+                    <p class="text-gray-500">500 000 FCFA</p>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <p class="font-medium">Livraison</p>
+                    <p class="text-gray-500">Gratuite</p>
+                </div>
+                <div class="border-t border-gray-300 my-4"></div>
+                <div class="flex justify-between items-center">
+                    <p class="font-medium text-lg">Montant Total</p>
+                    <p class="text-lg font-semibold">500 000 FCFA</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Livraison 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <div class="flex items-center">
+                      <div class="bg-gray-900 text-white rounded-full h-8 w-8 flex items-center justify-center">
+                       2
+                      </div>
+                      <span class="ml-3 font-semibold">PAIEMENT</span>
+                    </div>
+                    <div>
+                      
+                    </div>
+                  </div>
+                <form class="mt-8">
+                    <fieldset>
+                        
+                        <div class="flex justify-between mb-4">
+                            <div class="flex items-center">
+                                <input id="orange_money" name="payment_method" type="radio" class="h-4 w-4 text-yellow-600 border-gray-300 focus:ring-yellow-500">
+                                <label for="orange_money" class="ml-2 text-sm font-medium text-gray-700">Orange Money</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="mtn_money" name="payment_method" type="radio" class="h-4 w-4 text-yellow-600 border-yellow-300 focus:ring-yellow-500">
+                                <label for="mtn_money" class="ml-2 text-sm font-medium text-gray-700">MTN Mobile Money</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="moov_money" name="payment_method" type="radio" class="h-4 w-4 border-gray-300 text-orange-500 focus:ring-orange-500">
+                                <label for="moov_money" class="ml-2 text-sm font-medium text-gray-700">Moov Money</label>
+                              </div>
+                        </div>
+                    </fieldset>
+                    <div class="flex flex-col">
+                        <div class="mb-4">
+                            <label for="phone_number" class="block text-sm font-medium text-gray-700">Numéro de téléphone</label>
+                            <input type="text" id="phone_number" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="0101010101">
+                        </div>
+                        <div class="mb-4">
+                            <label for="validation_code" class="block text-sm font-medium text-gray-700">Code de validation</label>
+                            <input type="text" id="validation_code" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm"placeholder="0345">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="custom-button">Payer 500000 FCFA</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

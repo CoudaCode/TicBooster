@@ -1,11 +1,23 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia-Pro-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia-Pro-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/Sofia-Pro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 :root {
   --color-body: #f8f8f8;
   --color-primary: #F28705;
@@ -17,10 +29,26 @@
   --produit-card-bg: #dddddd;
 
 
-  --font-main: 'Montserrat', sans-serif;
+  --font-light: "Sofia Pro", sans-serif;
+  --font-regular: "Sofia Pro", sans-serif;
+  --font-bold: "Sofia Pro", sans-serif;
 }
+/* *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
 
 body {
   background: var(--color-body);
-  font-size: var(--font-main);
+  font-family: var(--font-light);
+}
+
+
+
+.footer {
+  max-width: 840px;
 }
