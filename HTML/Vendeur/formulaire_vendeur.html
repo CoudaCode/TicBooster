@@ -7,13 +7,52 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 ">
+  <style>
+    /* Vous pouvez ajuster cette hauteur selon vos besoins */
+    .card-height {
+        height: 500px; /* Hauteur pour petits écrans */
+    }
+</style>
 
-
-    <header class="bg-white shadow container mx-auto">
-        <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold text-gray-900"></h1>
+  <nav class="bg-white-200 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Left side: logo -->
+        <div class="flex-shrink-0 ">
+            <a href="index.html"><img src="../../image/logo.webp" alt="Logo" class="h-20 w-50 "></a>
         </div>
-      </header> 
+
+        <!-- Middle: search bar -->
+        <div class="relative flex-grow mx-4 text-center">
+            <input type="text" class="w-1/2 px-4 py-2 rounded border-2 border-gray-300 focus:outline-none focus:border-gray-200 pl-4 pr-10" placeholder="Rechercher...">
+            
+        </div>
+
+        <!-- Right side: buttons and hamburger menu -->
+        <div class="flex space-x-4 items-center">
+            <div class="hidden md:flex space-x-4">
+                <a href="Vendeur/formulaire_vendeur.html" class="bg-green-500 text-white px-4 py-2 rounded">Vendre</a>
+                <a href="Acheteur/formulaire_acheteur.html" class="bg-orange-500 text-white px-4 py-2 rounded">Acheter</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-500 focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          
+          <a href="Vendeur/formulaire_vendeur.html" class=" block w-1/4 bg-green-500 text-white px-4 py-2 rounded">Vendre</a>
+          <a href="Acheteur/formulaire_acheteur.html" class="block w-full bg-orange-500 text-white px-4 py-2 rounded">Acheter</a>
+          
+          
+        </div>
+    </div>
+</nav>
+
 
 
     <main class="flex items-center justify-center min-h-screen">
@@ -206,7 +245,7 @@
             </div>
 
             <div class="text-center">
-                <button type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 text-xl">SOUMETTRE</button>
+                <a href="profil.html" type="submit" class="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600 text-xl">SOUMETTRE</a>
             </div>
         </form>
     </div>
@@ -370,5 +409,11 @@
           <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
         </footer>
       </section>
+      <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

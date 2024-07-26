@@ -29,11 +29,40 @@
 <body class="bg-gray-100 ">
 
 
-    <header class="bg-white shadow container mx-auto">
-        <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold text-gray-900"></h1>
+  <nav class="bg-white p-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="hidden md:flex items-center space-x-8 mx-auto">
+            <div class="flex items-center">
+                <img src="../../image/logo.webp" alt="Logo" class="h-12 w-100"> <!-- Adjusted height and width -->
+                <span class="ml-2 text-lg font-bold text-orange-500"></span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <input type="text" placeholder="Rechercher..." class="p-2 rounded border border-gray-300">
+                <button class="p-2 rounded bg-gray-100 hover:bg-gray-200">
+                    <svg class="h-5 w-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.9 14.32a8 8 0 111.415-1.415l5.387 5.386a1 1 0 11-1.415 1.415l-5.386-5.387zM8 14A6 6 0 108 2a6 6 0 000 12z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
         </div>
-      </header>
+        <div class="flex items-center space-x-4">
+            <button class="p-2 rounded bg-gray-100 hover:bg-gray-200">
+                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m0 0v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6"></path>
+                </svg>
+            </button>
+            <button class="p-2 rounded bg-gray-100 hover:bg-gray-200">
+                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l1.3-6H6.7L7 13zm5 5a2 2 0 100-4 2 2 0 000 4z"></path>
+                </svg>
+            </button>
+            <button class="p-2 rounded bg-gray-100 hover:bg-gray-200">
+              <i class="fas fa-user text-gray-600 text-5xl"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
 
 
 
@@ -95,7 +124,7 @@
                 Eum perspicis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
             </p>
             <div class="flex justify-end">
-                <button type="submit" class="custom-button bg-yellow-400">Commander</button>
+                <a href="panier_acheteur.html" type="submit" class="custom-button bg-yellow-400">Commander</a>
             </div>
         </div>
     </div>
@@ -263,5 +292,13 @@
           <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
         </footer>
       </section>
+      <script>
+        // JavaScript for responsive menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

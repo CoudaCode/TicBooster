@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Vendeur</title>
-    <link rel="stylesheet" href="./../../CSS/Vendeur/profil.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  
-   <body class="bg-gray-100">
-    
-     
+<style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .custom-button:hover {
+      background-color: darkorange;
+  }
+</style>
+
+
+
+
+<body class="bg-gray-100 ">
+
+
   <nav class="bg-white p-4">
     <div class="container mx-auto flex items-center justify-between">
         <div class="hidden md:flex items-center space-x-8 mx-auto">
@@ -49,216 +64,76 @@
 </nav>
 
 
-    
 
-      <div class="container mx-auto p-2">
-        <h1 class="text-3xl font-semibold mb-4 underline-green">Actuellement dans ma boutique</h1>
 
-        <div class="flex flex-wrap -mx-2">
-            <!-- Section des cartes de produits -->
-            <div class="w-full lg:w-3/4 flex flex-wrap">
-                <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                      <a href="page_service_detail.html"><img src="../../image/i (1).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                      </a>
-                        <div class="p-4">
-                            <div class="flex items-center mb-2">
-                                <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                                <div class="flex justify-end items-center">
-                                    <div class="text-yellow-500">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-user-alt mr-2"></i>
-                                <span>Innocent Kam</span>
-                                <div class="flex justify-end items-center flex-grow">
-                                    <p class="text-lg font-semibold">56 500 FCFA</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+
+    <div class="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-md p-10 mt-4">
+        <div class="flex flex-col md:flex-row ">
+            <div class="flex-1 flex flex-col md:flex-row gap-4 text-center">
+                <div class="w-full md:w-2/3">
+                    <img src="../../image/i (1).webp" alt="Product Image" class="w-full h-auto object-center object-contain rounded-md mb-4">
                 </div>
-                
-                <!-- Répétez ce bloc pour chaque produit -->
-                
-                    <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                    <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                <div class="p-4">
-                    <div class="flex items-center mb-2">
-                        <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                        <div class="flex justify-end items-center">
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-user-alt mr-2"></i>
-                        <span>Innocent Kam</span>
-                        <div class="flex justify-end items-center flex-grow">
-                            <p class="text-lg font-semibold">56 500 FCFA</p>
-                        </div>
-                    </div>
+                <div class="w-full md:w-1/3 flex flex-col space-y-4">
+                    <img src="../../image/i (1).webp" alt="Product Thumbnail" class="w-full h-auto object-center object-contain  rounded-md">
+                    <img src="../../image/i (1).webp" alt="Product Thumbnail" class="w-full h-auto  object-center object-contain  rounded-md">
                 </div>
+                <!-- <div class="mt-6 flex justify-between items-center">
+                    <p class="text-lg font-semibold text-gray-700">Conception de Commode...</p>
+                    <p class="text-2xl font-bold text-gray-900">56 500 FCFA</p>
+                </div> -->
             </div>
-                 </div>
-                    <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                    <img src="../../image/i (5).webp" alt="Produit" class="w-full h-80  object-contain object-center mb-4">
-                <div class="p-4">
-                    <div class="flex items-center mb-2">
-                        <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                        <div class="flex justify-end items-center">
-                            <div class="text-yellow-500">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                                <i class="fas fa-star text-gray-200"></i>
-                            </div>
-                        </div>
+            <div class="flex-1 mt-6 md:mt-0 md:ml-6 ">
+                <h1 class="text-2xl font-bold">Innocent Kam</h1>
+                <p class="text-gray-600 border-b-2 border-gray-600 pb-1 w-full max-w-xs">Ménusier</p>
+
+               
+                <div class="flex items-center mt-2">
+                    <div class="flex items-center">
+                        <i class="fas fa-user text-5xl p-6 mr-8 bg-gray-200 from-blue-500 to-green-500 text-black rounded-full"></i>
+
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-gray-400"></i>
+                        <i class="fas fa-star text-gray-400"></i>
                     </div>
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-user-alt mr-2"></i>
-                        <span>Innocent Kam</span>
-                        <div class="flex justify-end items-center flex-grow">
-                            <p class="text-lg font-semibold">56 500 FCFA</p>
-                        </div>
-                    </div>
+                                       
                 </div>
-            </div>
-                 </div>
+                <div class="flex items-center mt-1 ">
+                    <div class="flex items-center">
+                      
+                        <i class="fas fa-phone-volume text-5xl p-4 from-gray-400 to-gray-300 text-black rounded-full"></i>
 
-        
-
-                 <div class="w-full sm:w-1/2 lg:w-1/2 p-2">
-                    <div class="bg-white rounded-lg shadow relative overflow-hidden">
-                        <img src="../../image/i (1).webp" alt="Produit" class="w-full h-80 object-contain object-center mb-4">
-                        <div class="p-4">
-                            <div class="flex items-center mb-2">
-                                <h3 class="text-lg font-semibold flex-grow">Conception de Commode</h3>
-                                <div class="flex justify-end items-center">
-                                    <div class="text-yellow-500">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                        <i class="fas fa-star text-gray-200"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center mb-2">
-                                <i class="fas fa-user-alt mr-2"></i>
-                                <span>Innocent Kam</span>
-                                <div class="flex justify-end items-center flex-grow">
-                                    
-                                    <p class="text-lg font-semibold">56 500 FCFA</p>
-                                   
-                                </div>
-                            </div>
-                            
-                        </div>
                     </div>
+                 <button class="bg-gray-200 text-gray-700 py-2 px-8 rounded text-xl"> Message </button>
+                    
                 </div>
-                
-                
-                
-        
-
                 
             </div>
-           
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- Section de la carte de profil -->
-            <div class="w-full lg:w-1/4 p-2">
-                <div class="bg-white rounded-lg shadow p-4 relative">
-                    <div class="rounded-full bg-gray-200 w-24 h-24 mx-auto 
-                    mb-4"></div>
-                    <h3 class="text-lg font-semibold text-center">Innocent Kam</h3>
-                    <p class="text-gray-500 text-center">Menuisier - Ébéniste</p>
-                    <div class="text-yellow-500 text-center mb-4">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star text-gray-200"></i>
-                        <i class="fas fa-star text-gray-200"></i>
-                    </div>
-                    <div class="text-center">
-                        <button class="text-gray-700 py-2 px-4 rounded mr-2">
-                            <i class="text-2xl fas fa-phone-volume"></i>
-
-                        </button>
-                        <button class="bg-gray-200 text-gray-700 py-2 px-4 rounded">
-                            Message
-                        </button>
-                    </div>
-                </div>
+        </div>
+        <div class="mt-6 max-w-lg">
+            <div class="mt-6 flex justify-between items-center">
+                <p class="text-lg font-semibold text-gray-700">Conception de Commode...</p>
+                <p class="text-2xl font-bold text-gray-900">56 500 FCFA</p>
             </div>
-            
-            
+            <p class="text-gray-700 mt-4">
+                Eum perspicis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+            </p>
+            <div class="flex justify-end">
+                <a href="panier_vendeur.html" type="submit" class="custom-button bg-yellow-400">Commander</a>
+            </div>
         </div>
     </div>
 
-   
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- footer -->
-      <section class="bg-white">
+    <section class="bg-white mt-4">
         <footer
           class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
         >
@@ -417,15 +292,13 @@
           <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
         </footer>
       </section>
-  
-    <script src="./../../JS/Vendeur/profil.js"></script>
-    <script>
-      // JavaScript for responsive menu toggle
-      const menuToggle = document.querySelector('.menu-toggle');
-      const menu = document.querySelector('.menu');
-      menuToggle.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-      });
-  </script>
-  </body>
+      <script>
+        // JavaScript for responsive menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
 </html>
