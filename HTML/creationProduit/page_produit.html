@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tous les produits</title>
-    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./../../CSS/style.css" />
     <link
       rel="stylesheet"
       href="./../../CSS/creationProduit/produitsList.css"
@@ -83,6 +83,12 @@
                 class="block px-4 py-2 text-blue-500 hover:bg-gray-100"
                 >Profil</a
               >
+              <button
+                id="devenirVendeur"
+                class="block px-4 py-2 text-red-500 hover:bg-gray-100"
+              >
+                Devenir Vendeur
+              </button>
               <button
                 id="logout"
                 class="block px-4 py-2 text-red-500 hover:bg-gray-100"
@@ -206,138 +212,9 @@
     <section class="text-center py-8">
       <div
         class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4"
+        id="services"
       >
-        <!-- Product 1 -->
-        <div class="bg-white shadow-md rounded-lg p-4">
-          <a href="./creationProduit/creation-produit1.html">
-            <img
-              src="./../../image/img1.jpg"
-              alt="Product 1"
-              class="w-full h-64 object-conatain object-center rounded-t-lg"
-          /></a>
-          <div class="mt-4">
-            <div class="flex justify-between mb-2">
-              <h2 class="text-gray-800">Changement de moteur...</h2>
-              <div class="flex">
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-              </div>
-            </div>
-            <div class="flex items-center mt-4 justify-between">
-              <div class="flex items-center">
-                <div
-                  class="h-8 flex items-center shadow-rounded justify-center"
-                >
-                  <i class="fas fa-user-circle text-black text-3xl mr-2"></i>
-                </div>
-                <div class="ml-2">
-                  <span class="text-sm">Touré Mamadou</span>
-                  <p class="text-xs text-gray-500">Mecanicien</p>
-                </div>
-              </div>
-              <p class="text-lg font-semibold">65 500 FCFA</p>
-            </div>
-          </div>
-        </div>
-        <!-- Product 2 -->
-        <div class="bg-white shadow-md rounded-lg p-4">
-          <img
-            src="./../../image/img2.jpg"
-            alt="Product 2"
-            class="w-full h-64 object-cover rounded-t-lg"
-          />
-          <div class="mt-4">
-            <div class="flex justify-between mb-2">
-              <h2 class="text-gray-800">Couverture de mariage</h2>
-              <div class="flex">
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-              </div>
-            </div>
-            <div class="flex items-center mt-4 justify-between">
-              <div class="flex items-center">
-                <div class="h-8 flex items-center justify-center">
-                  <i class="fas fa-user-circle text-black text-3xl mr-2"></i>
-                </div>
-                <div class="ml-2">
-                  <span class="text-sm">Ange Kourouma</span>
-                  <p class="text-xs text-gray-500">Vidéaste-Monteur</p>
-                </div>
-              </div>
-              <p class="text-lg font-semibold">65 500 FCFA</p>
-            </div>
-          </div>
-        </div>
-        <!-- Product 3 -->
-        <div class="bg-white shadow-md rounded-lg p-4">
-          <img
-            src="./../../image/img3.jpg"
-            alt="Product 3"
-            class="w-full h-64 object-cover rounded-t-lg"
-          />
-          <div class="mt-4">
-            <div class="flex justify-between mb-2">
-              <h2 class="text-gray-800">Amenagement de salon...</h2>
-              <div class="flex">
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-              </div>
-            </div>
-            <div class="flex items-center mt-4 justify-between">
-              <div class="flex items-center">
-                <div class="h-8 flex items-center justify-center">
-                  <i class="fas fa-user-circle text-black text-3xl mr-2"></i>
-                </div>
-                <div class="ml-2">
-                  <span class="text-sm">Ninnin Ange</span>
-                  <p class="text-xs text-gray-500">Décoratice d'interieur</p>
-                </div>
-              </div>
-              <p class="text-lg font-semibold">65 500 FCFA</p>
-            </div>
-          </div>
-        </div>
-        <!-- Product 4 -->
-        <div class="bg-white shadow-md rounded-lg p-4">
-          <img
-            src="./../../image/img4.jpg"
-            alt="Product 4"
-            class="w-full h-64 object-cover rounded-t-lg"
-          />
-          <div class="mt-4">
-            <div class="flex justify-between mb-2">
-              <h2 class="text-gray-800">Conception de Commode...</h2>
-              <div class="flex">
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="fas fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-                <i class="far fa-star text-yellow-500"></i>
-              </div>
-            </div>
-            <div class="flex items-center mt-4 justify-between">
-              <div class="flex items-center">
-                <div class="h-8 flex items-center justify-center">
-                  <i class="fas fa-user-circle text-black text-3xl mr-2"></i>
-                </div>
-                <div class="ml-2">
-                  <span class="text-sm">Innocent Kam </span>
-                  <p class="text-xs text-gray-500">Ménusier</p>
-                </div>
-              </div>
-              <p class="text-lg font-semibold">65 500 FCFA</p>
-            </div>
-          </div>
-        </div>
+        <!--  All Services  -->
       </div>
     </section>
 
@@ -366,7 +243,7 @@
           class="relative bg-orange-500 text-white rounded-lg overflow-hidden shadow-lg"
         >
           <img
-            src="./../../image/4 – 1.png"
+            src="./../../image/banner/banner1.jpg"
             alt="M. KOFFI"
             class="w-full h-full object-cover"
           />

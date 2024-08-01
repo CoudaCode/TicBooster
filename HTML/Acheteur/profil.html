@@ -3,10 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Acheteur</title>
-    <link rel="stylesheet" href="./../../CSS/Acheteur/profil.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Product Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
   </head>
+
+  <style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: darkorange;
+    }
+  </style>
+
   <body class="bg-gray-100">
     <header class="bg-white shadow container mx-auto">
       <div class="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -14,15 +36,207 @@
       </div>
     </header>
 
-    <main class="">
-      <section class="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4">Nos Produits</h2>
-        <p class="text-gray-700">Ce texte est centré sur la page.</p>
-        <!-- Ajoutez votre contenu principal ici -->
-      </section>
-    </main>
-
-    <section class="bg-white">
+    <div class="container mx-auto p-4">
+      <div class="flex flex-col lg:flex-row">
+        <!-- Profile Section -->
+        <div class="w-full lg:w-1/4 p-2 mb-4 lg:mb-0">
+          <div class="bg-white rounded-lg shadow p-4 relative">
+            <div
+              class="rounded-full bg-gray-200 w-24 h-24 mx-auto mb-4 flex items-center justify-center"
+            >
+              <i class="fas fa-user text-gray-600 text-5xl"></i>
+            </div>
+            <h3 class="text-lg font-semibold text-center">Innocent Kam</h3>
+            <p class="text-gray-500 text-center">Menuisier - Ébéniste</p>
+            <div class="text-yellow-500 text-center mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star text-gray-200"></i>
+              <i class="fas fa-star text-gray-200"></i>
+            </div>
+            <div class="text-center">
+              <button class="text-gray-700 py-2 px-4 rounded mr-2">
+                <i class="text-2xl fas fa-phone-volume"></i>
+              </button>
+              <button
+                class="bg-gray-200 text-gray-700 py-2 px-4 rounded text-xl"
+              >
+                Message
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Recent Purchases Section -->
+        <div class="w-full lg:w-3/4 lg:ml-4">
+          <h2 class="bg-gray-100 text-2xl font-semibold mb-4 underline-green">
+            Achats récents
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Card -->
+            <div class="bg-white shadow-md rounded-lg">
+              <a href="page_service_detaille.html"
+                ><img
+                  src="../../image/i (1).webp"
+                  alt="Product Image"
+                  class="w-full h-48 object-contain object-centerr rounded-t-lg"
+              /></a>
+              <div class="p-4">
+                <div class="flex items-center">
+                  <div class="flex items-center mb-2">
+                    <h3 class="text-lg font-semibold flex-grow">
+                      Conception de Commode
+                    </h3>
+                    <div class="flex justify-end items-center">
+                      <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center mt-2 justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user-alt mr-2"></i>
+                    </div>
+                    <div class="ml-2">
+                      <span class="text-sm">Innocent Kam</span>
+                      <p class="text-xs text-gray-500">Menuisier</p>
+                    </div>
+                  </div>
+                  <p class="text-lg font-semibold">65 500 FCFA</p>
+                </div>
+              </div>
+            </div>
+            <!-- Repeat the above card for other products -->
+            <div class="bg-white rounded-lg shadow">
+              <img
+                src="../../image/i (5).webp"
+                alt="Product Image"
+                class="w-full h-48 object-contain object-center rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center">
+                  <div class="flex items-center mb-2">
+                    <h3 class="text-lg font-semibold flex-grow">
+                      Conception de Commode
+                    </h3>
+                    <div class="flex justify-end items-center">
+                      <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center mt-2 justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user-alt mr-2"></i>
+                    </div>
+                    <div class="ml-2">
+                      <span class="text-sm">Innocent Kam</span>
+                      <p class="text-xs text-gray-500">Menuisier</p>
+                    </div>
+                  </div>
+                  <p class="text-lg font-semibold">65 500 FCFA</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow">
+              <img
+                src="../../image/i (5).webp"
+                alt="Product Image"
+                class="w-full h-48 object-contain object-center rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center">
+                  <div class="flex items-center mb-2">
+                    <h3 class="text-lg font-semibold flex-grow">
+                      Conception de Commode
+                    </h3>
+                    <div class="flex justify-end items-center">
+                      <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center mt-2 justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user-alt mr-2"></i>
+                    </div>
+                    <div class="ml-2">
+                      <span class="text-sm">Innocent Kam</span>
+                      <p class="text-xs text-gray-500">Menuisier</p>
+                    </div>
+                  </div>
+                  <p class="text-lg font-semibold">65 500 FCFA</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow">
+              <img
+                src="../../image/i (1).webp"
+                alt="Product Image"
+                class="w-full h-48 object-contain object-center rounded-t-lg"
+              />
+              <div class="p-4">
+                <div class="flex items-center">
+                  <div class="flex items-center mb-2">
+                    <h3 class="text-lg font-semibold flex-grow">
+                      Conception de Commode
+                    </h3>
+                    <div class="flex justify-end items-center">
+                      <div class="text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                        <i class="fas fa-star text-gray-200"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex items-center mt-2 justify-between">
+                  <div class="flex items-center">
+                    <div
+                      class="bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center"
+                    >
+                      <i class="fas fa-user-alt mr-2"></i>
+                    </div>
+                    <div class="ml-2">
+                      <span class="text-sm">Innocent Kam</span>
+                      <p class="text-xs text-gray-500">Menuisier</p>
+                    </div>
+                  </div>
+                  <p class="text-lg font-semibold">65 500 FCFA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="bg-white mt-4">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
       >
@@ -36,7 +250,7 @@
               class="flex justify-center space-x-3 lg:justify-start"
             >
               <div class="w-auto h-auto rounded-full dark:bg-violet-600">
-                <img src="./image/logo.webp" class="w-auto h-24" />
+                <img src="../../image/logo.webp" class="w-auto h-24" />
                 <div class="self-center text-2xl font-semibold">
                   <div class="flex justify-start space-x-3">
                     <a
@@ -181,7 +395,5 @@
         <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
       </footer>
     </section>
-
-    <script src="./../../JS/Acheteur/profil.js"></script>
   </body>
 </html>
