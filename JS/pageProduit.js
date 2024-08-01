@@ -1,16 +1,15 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "http://localhost:4000/api";
 
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
   const servicesContainer = document.getElementById("services");
+  const searchInput = document.getElementById("search-input");
 
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
 
-  console.log("token", token);
   if (token) {
-    // Si connecté, afficher l'icône de profil et masquer les boutons "Vendre" et "Acheter"
     if (profileIcon) profileIcon.classList.remove("hidden");
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
@@ -18,7 +17,6 @@ window.addEventListener("DOMContentLoaded", function () {
     window.location.href = "http://127.0.0.1:5500/HTML/login.html";
   }
 
-  // Gestion de la déconnexion
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", function () {
@@ -27,18 +25,16 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Affichage des Produits
+  let allServices = [];
+
   const fetchServices = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/api/service/`, {
-        method: "GET",
-      });
-
+      const response = await window.fetch(`${BASE_URL}/service/`, {});
       const result = await response.json();
 
-      console.log("result", result);
       if (response.ok) {
-        renderServices(result.data);
+        allServices = result.data;
+        renderServices(allServices);
       } else {
         console.error(result.message);
       }
@@ -50,10 +46,9 @@ window.addEventListener("DOMContentLoaded", function () {
   const renderServices = (services) => {
     servicesContainer.innerHTML = ""; // Clear previous services
     services.forEach((service) => {
-      console.log("service", service);
       const serviceCard = `
         <div class="bg-white shadow-md rounded-lg p-4">
-          <a href="./../Acheteur/page_service_detaille.html">
+          <a href="./../Acheteur/page_service_detaille.html?id=${service.id}">
             <img
               src="${service.images[0]}" // Assuming the service object has an imageUrl property
               alt="${service.name}"
@@ -90,6 +85,20 @@ window.addEventListener("DOMContentLoaded", function () {
       servicesContainer.insertAdjacentHTML("beforeend", serviceCard);
     });
   };
+
+  const filterServices = (query) => {
+    const filteredServices = allServices.filter((service) =>
+      service.name.toLowerCase().includes(query.toLowerCase())
+    );
+    renderServices(filteredServices);
+  };
+
+  if (searchInput) {
+    searchInput.addEventListener("input", (event) => {
+      const query = event.target.value;
+      filterServices(query);
+    });
+  }
 
   fetchServices();
 });
