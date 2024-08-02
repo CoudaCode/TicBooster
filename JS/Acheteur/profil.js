@@ -19,4 +19,22 @@ window.addEventListener("DOMContentLoaded", function () {
       window.location.reload();
     });
   }
+
+  console.log("token", token);
+  const getProfile = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:4000/api/users/getuser", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
+      console.log("result", result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getProfile();
 });
