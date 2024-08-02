@@ -6,7 +6,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
 
-  console.log("token", token);
   if (token) {
     if (profileIcon) profileIcon.classList.remove("hidden");
     if (sellButton) sellButton.classList.add("hidden");
@@ -52,7 +51,6 @@ window.addEventListener("DOMContentLoaded", function () {
         method: "GET",
       });
       const result = await response.json();
-      console.log("result", result);
       if (response.ok) {
         renderServiceDetails(result.data);
       } else {
@@ -65,7 +63,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function renderServiceDetails(service) {
     const serviceContainer = document.getElementById("service-details");
-    console.log("service", service);
+
     if (serviceContainer) {
       serviceContainer.innerHTML = `
         <div class="flex items-center mb-4">
@@ -96,9 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let total = unitPrice * quantity;
 
     const updateTotal = () => {
-      amountElement.textContent = `${(
-        unitPrice * quantity
-      ).toLocaleString()} FCFA`;
+      amountElement.textContent = `${unitPrice.toLocaleString()} FCFA`;
       totalElement.textContent = `${total.toLocaleString()} FCFA`;
     };
 
@@ -119,5 +115,60 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     updateTotal();
+
+    // Add event listener for "Ajouter au panier" button
+    const addToCartButton = document.querySelector(".bg-yellow-500");
+    if (addToCartButton) {
+      addToCartButton.addEventListener("click", () => {
+        OrderService(serviceId, quantity, total);
+      });
+    }
+  }
+
+  async function OrderService(id, quantity, totalPrice) {
+    try {
+      console.log("id", token);
+      console.log("quantity", quantity);
+      console.log("totalPrice", totalPrice);
+      console.log("serviceId", id);
+      const response = await fetch(`${BASE_URL}/order/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          status: "pending",
+          quantity: quantity,
+          totalPrice: totalPrice,
+          serviceId: id,
+          date: new Date(),
+        }),
+      });
+      console.log("response", response);
+      const result = await response.json();
+      console.log("result", result);
+      if (result.status === "success") {
+        swal("Commande réussie !", "Votre commande a été ajoutée au panier.", {
+          icon: "success",
+          buttons: "ok",
+        }).then(() => {
+          window.location.href =
+            "http://127.0.0.1:5500/HTML/creationProduit/page_produit.html";
+        });
+      } else {
+        swal("Erreur", result.message, {
+          icon: "error",
+        }).then(() => {
+          window.location.href =
+            "http://127.0.0.1:5500/HTML/creationProduit/page_produit.html";
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      swal("Erreur", "Une erreur est survenue. Veuillez réessayer.", {
+        icon: "error",
+      });
+    }
   }
 });
