@@ -19,8 +19,23 @@ window.addEventListener("DOMContentLoaded", function () {
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", function () {
-      localStorage.removeItem("accessToken");
-      window.location.reload();
+      swal({
+        title: "Déconnexion",
+        text: "Voulez-vous vous déconnecter ?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((action) => {
+        if (action) {
+          swal("Vous êtes déconnecté !", "Déconnexion réussie.", {
+            icon: "success",
+          }).then(() => {
+            localStorage.removeItem("accessToken");
+            window.location.reload();
+          });
+        } else {
+        }
+      });
     });
   }
 
@@ -52,73 +67,60 @@ window.addEventListener("DOMContentLoaded", function () {
     console.log("service", service);
     if (serviceContainer) {
       serviceContainer.innerHTML = `
-     <div class="flex flex-col lg:flex-row">
-        <!-- Image and Summary Section -->
-        <div class="w-full lg:w-2/3 lg:pr-4 mb-4">
-          <div class="bg-white rounded-lg shadow-md">
-            <img
-              src="${service.images[0]}"
-              alt="Service Image"
-              class="w-full h-64 object-cover rounded-t-lg"
-            />
-            <div class="p-4">
-              <h2 class="text-2xl font-semibold mb-2">${service.name}</h2>
-              <p class="text-gray-700 mb-4">
-                ${service.description}
-              </p>
-              <div class="flex items-center mb-4">
-                <div class="text-yellow-500 flex items-center">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star text-gray-200"></i>
-                </div>
-                <span class="ml-2 text-gray-600">Duree de conception: ${service.duration}</span>
-              </div>
-              <p class="text-lg font-semibold mb-4">Prix: ${service.price} FCFA</p>
-              <a href="http://127.0.0.1:5500/HTML/Vendeur/panier.html?id=${service.id}">
-                <button class="custom-button">Commander</button>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Seller Information Section -->
-        <div class="w-full lg:w-1/3 lg:pl-4 mb-4">
-          <div class="bg-white rounded-lg shadow-md p-4">
-            <div class="flex items-center mb-4">
-              <div
-                class="rounded-full bg-gray-200 w-16 h-16 flex items-center justify-center mr-4"
-              >
-                <i class="fas fa-user text-gray-600 text-4xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold">${service.artisant.user.firstname} ${service.artisant.user.lastname}</h3>
-                <p class="text-gray-500">${service.artisant.job}</p>
-                <div class="text-yellow-500 mt-2">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star text-gray-200"></i>
-                </div>
-              </div>
-            </div>
-            <div class="text-center">
-              <button class="text-gray-700 py-2 px-4 rounded mr-2">
-                <i class="text-2xl fas fa-phone-volume"></i>
-              </button>
-              <button
-                class="bg-gray-200 text-gray-700 py-2 px-4 rounded text-xl"
-              >
-                Message
-              </button>
-            </div>
+<section class="text-gray-700 body-font overflow-hidden bg-white">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <img alt="ecommerce" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="${service.images[0]}">
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h2 class="text-sm title-font text-gray-500 tracking-widest">${service.artisant.user.firstname} ${service.artisant.user.lastname}</h2>
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">${service.name}</h1>
+        <div class="flex mb-4">
+          <span class="flex items-center">
+            <i class="lucide lucide-star text-red-500 w-4 h-4"></i>
+            <i class="lucide lucide-star text-red-500 w-4 h-4"></i>
+            <i class="lucide lucide-star text-red-500 w-4 h-4"></i>
+            <i class="lucide lucide-star text-red-500 w-4 h-4"></i>
+            <i class="lucide lucide-star text-red-500 w-4 h-4"></i>
+            <span class="text-gray-600 ml-3">4 Reviews</span>
+          </span>
+          <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+            <a class="text-gray-500">
+              <i class="lucide lucide-heart w-5 h-5"></i>
+            </a>
+            <a class="ml-2 text-gray-500">
+              <i class="lucide lucide-twitter w-5 h-5"></i>
+            </a>
+            <a class="ml-2 text-gray-500">
+              <i class="lucide lucide-facebook w-5 h-5"></i>
+            </a>
+          </span>
+        </div>
+        <p class="leading-relaxed">
+          ${service.description}
+        </p>
+        <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+          <div class="flex">
+            <span class="mr-3">Durée de conception</span>
+            <span class="">${service.duration}</span>
+            
           </div>
+         
+        </div>
+        <div class="flex">
+          <span class="title-font font-medium text-2xl text-gray-900">${service.price} FCFA</span>
+       
+          <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"
+          >
+          <a href="http://127.0.0.1:5500/HTML/Vendeur/panier.html?id=${service.id}">
+            Commander
+          </a>
         </div>
       </div>
-        `;
+    </div>
+  </div>
+</section>
+`;
     }
   }
 });

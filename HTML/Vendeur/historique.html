@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Page</title>
+    <title>Historique et Profil</title>
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -62,7 +62,7 @@
     <nav class="bg-white-200 p-4">
       <div class="container mx-auto flex justify-between items-center px-8">
         <div class="flex-shrink-0">
-          <a href="index.html">
+          <a href="./../creationProduit/page_produit.html">
             <img src="./../../image/logo.webp" alt="Logo" class="h-20 w-50" />
           </a>
         </div>
@@ -125,22 +125,41 @@
     </nav>
 
     <div class="container mx-auto p-4">
-      <div class="flex flex-col lg:flex-row gap-4">
+      <div class="flex flex-col lg:flex-row gap-4" id="profile-container">
         <!-- Profile Section -->
         <div
           class="w-full lg:w-1/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
         >
-          <h2 class="text-2xl font-semibold mb-4">Données Utilisateur</h2>
-          <div class="space-y-2 flex-grow">
-            <p class="text-gray-700"><strong>Nom:</strong> amani yao</p>
-            <p class="text-gray-700">
-              <strong>Email:</strong> amaniyao@gmail.com
-            </p>
-            <p class="text-gray-700">
-              <strong>Téléphone:</strong> +2250506070809
-            </p>
+          <div class="bg-white rounded-lg shadow p-4 relative">
+            <!-- User Profile Picture -->
+            <div
+              class="rounded-full bg-gray-200 w-24 h-24 mx-auto mb-4 flex items-center justify-center"
+            >
+              <i class="fas fa-user text-gray-600 text-5xl"></i>
+            </div>
+
+            <!-- User Information -->
+            <h3
+              class="text-xl font-semibold text-center text-gray-800 mb-2"
+              id="profile-name"
+            >
+              Diara Boubaker
+            </h3>
+            <p class="text-center text-gray-600 mb-2" id="profile-type"></p>
+            <p class="text-center text-gray-500 mb-4" id="profile-email"></p>
+            <p class="text-center text-gray-500 mb-4">+2250506070809</p>
+
+            <!-- Action Buttons -->
+            <div class="text-center">
+              <button
+                class="text-gray-700 py-2 px-4 rounded border border-gray-300 mr-2 hover:bg-gray-100"
+              >
+                Modifier
+              </button>
+            </div>
           </div>
         </div>
+
         <!-- Recent Purchases Section -->
         <div
           class="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
@@ -359,6 +378,7 @@
         <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
       </footer>
     </section>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
       document
         .getElementById("menu-toggle")

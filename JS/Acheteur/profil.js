@@ -3,6 +3,10 @@ window.addEventListener("DOMContentLoaded", function () {
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
+  const profileName = document.getElementById("profile-name");
+  const profileEmail = document.getElementById("profile-email");
+  const profilePhone = document.getElementById("profile-phone");
+  const profileType = document.getElementById("profile-type");
 
   if (token) {
     if (profileIcon) profileIcon.classList.remove("hidden");
@@ -15,12 +19,28 @@ window.addEventListener("DOMContentLoaded", function () {
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", function () {
-      localStorage.removeItem("accessToken");
-      window.location.reload();
+      swal({
+        title: "Déconnexion",
+        text: "Voulez-vous vous déconnecter ?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((action) => {
+        if (action) {
+          swal("Vous êtes déconnecté !", "Déconnexion réussie.", {
+            icon: "success",
+          }).then(() => {
+            localStorage.removeItem("accessToken");
+            window.location.reload();
+          });
+        } else {
+        }
+      });
     });
   }
 
   console.log("token", token);
+
   const getProfile = async () => {
     try {
       const response = await fetch("http://127.0.0.1:4000/api/users/getuser", {
@@ -31,6 +51,18 @@ window.addEventListener("DOMContentLoaded", function () {
       });
       const result = await response.json();
       console.log("result", result);
+
+      // Assuming result is an object with user data
+      if (result && result.data) {
+        const { firstname, lastname, email, phoneNumber, type } = result.data;
+
+        // Update DOM with user data
+        if (profileName) profileName.textContent = `${firstname} ${lastname}`;
+        if (profileEmail) profileEmail.textContent = email;
+        if (profilePhone) profilePhone.textContent = phoneNumber;
+        if (profileType)
+          profileType.textContent = type === "customer" ? "Client" : "Vendeur";
+      }
     } catch (error) {
       console.log(error);
     }

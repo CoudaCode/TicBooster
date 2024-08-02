@@ -20,8 +20,23 @@ window.addEventListener("DOMContentLoaded", function () {
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", function () {
-      localStorage.removeItem("accessToken");
-      window.location.reload();
+      swal({
+        title: "Déconnexion",
+        text: "Voulez-vous vous déconnecter ?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((action) => {
+        if (action) {
+          swal("Vous êtes déconnecté !", "Déconnexion réussie.", {
+            icon: "success",
+          }).then(() => {
+            localStorage.removeItem("accessToken");
+            window.location.reload();
+          });
+        } else {
+        }
+      });
     });
   }
 
