@@ -3,66 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tous les produits</title>
-    <link rel="stylesheet" href="./../../CSS/style.css" />
+    <title>Product Page</title>
     <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
-      href="./../../CSS/creationProduit/produitsList.css"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <link
       rel="shortcut icon"
       href="./../../image/logo.webp"
       type="image/x-icon"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-      .profile-container {
-        position: relative;
-        display: inline-block;
-      }
-      .profile-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: white;
-        border: 1px solid #ddd;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        padding: 10px;
-        border-radius: 4px;
-      }
-      .profile-container:hover .profile-menu {
-        display: block;
-      }
-      .hidden {
-        display: none;
-      }
-    </style>
   </head>
+
+  <style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: darkorange;
+    }
+
+    .profile-container {
+      position: relative;
+      display: inline-block;
+    }
+    .profile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ddd;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .profile-container:hover .profile-menu {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
   <body class="bg-gray-100">
     <nav class="bg-white-200 p-4">
-      <div class="container mx-auto flex justify-between items-center">
+      <div class="container mx-auto flex justify-between items-center px-8">
         <div class="flex-shrink-0">
           <a href="index.html">
             <img src="./../../image/logo.webp" alt="Logo" class="h-20 w-50" />
           </a>
         </div>
-        <div class="relative flex-grow mx-4 text-center">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Rechercher un service..."
-            class="w-1/2 px-4 py-2 rounded border-2 border-gray-300 focus:outline-none focus:border-gray-200 pl-4 pr-10"
-          />
-        </div>
+
         <div class="flex space-x-4 items-center">
           <!-- Boutons "Vendre" et "Acheter" visibles uniquement lorsqu'il est non connecté -->
           <a
             href="Vendeur/formulaire_vendeur.html"
             class="sell-button hidden bg-green-500 text-white px-4 py-2 rounded"
-            >Vendre</a
+            >Devenir Vendeur</a
           >
           <a
             href="Acheteur/formulaire_acheteur.html"
@@ -107,149 +117,13 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
             href="Vendeur/formulaire_vendeur.html"
-            class="block w-1/4 bg-green-500 text-white px-4 py-2 rounded"
-            >Vendre</a
-          >
-          <a
-            href="Acheteur/formulaire_acheteur.html"
-            class="block w-full bg-orange-500 text-white px-4 py-2 rounded"
-            >Acheter</a
+            class="block w-auto bg-green-500 text-white px-4 py-2 rounded"
+            >Devenir Vendeur</a
           >
         </div>
       </div>
     </nav>
 
-    <section class="container mx-auto p-6 text-center w-full mb-8">
-      <div class="py-4">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/agro1-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Agroalimentaire, Restauration</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/construction-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Construction et Bâtiment</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/mecanic-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Mécanique, Électromécanique</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/mobilier-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Mobilier et Ameublement</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/textile-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Textile, Habillement</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/camera-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Audiovisuel et Communication</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Hygiène et Soins Corporels</p>
-            </div>
-            <div
-              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
-            >
-              <img
-                src="./../../image/Categorie/art-removebg-preview.png"
-                alt="Hygiène et Soins Corporels"
-                class="mx-auto mb-2 w-12 h-12"
-              />
-              <p class="text-sm font-medium">Art et Décoration</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="text-center py-8">
-      <div
-        class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4"
-        id="services"
-      >
-        <!--  All Services  -->
-      </div>
-    </section>
-
-    <section class="text-center p-4 mb-8 container mx-auto">
-      <h2 class="text-3xl text-orange-500 font-bold mb-6">Témoignages</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
-          class="relative bg-orange-500 text-white rounded-lg overflow-hidden shadow-lg"
-        >
-          <img
-            src="./../../image/banner/banner1.jpg"
-            alt="M. AKA"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div
-          class="relative bg-green-600 text-white rounded-lg overflow-hidden shadow-lg"
-        >
-          <img
-            src="./../../image/banner/banner2.jpg"
-            alt="Mlle Assemian"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div
-          class="relative bg-orange-500 text-white rounded-lg overflow-hidden shadow-lg"
-        >
-          <img
-            src="./../../image/banner/banner1.jpg"
-            alt="M. KOFFI"
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- footer -->
     <section class="bg-white mt-4">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
@@ -264,7 +138,7 @@
               class="flex justify-center space-x-3 lg:justify-start"
             >
               <div class="w-auto h-auto rounded-full dark:bg-violet-600">
-                <img src="./../../image/logo.webp" class="w-auto h-24" />
+                <img src="../../image/logo.webp" class="w-auto h-24" />
                 <div class="self-center text-2xl font-semibold">
                   <div class="flex justify-start space-x-3">
                     <a
@@ -417,7 +291,6 @@
           menu.classList.toggle("hidden");
         });
     </script>
-
-    <script src="./../../JS/pageProduit.js"></script>
+    <script src="./../../JS/pageDetailProduits.js"></script>
   </body>
 </html>

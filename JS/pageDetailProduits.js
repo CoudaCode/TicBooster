@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 <span class="ml-2 text-gray-600">Duree de conception: ${service.duration}</span>
               </div>
               <p class="text-lg font-semibold mb-4">Prix: ${service.price} FCFA</p>
-              <a>
+              <a href="http://127.0.0.1:5500/HTML/Vendeur/panier.html?id=${service.id}">
                 <button class="custom-button">Commander</button>
               </a>
             </div>
