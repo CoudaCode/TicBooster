@@ -71,7 +71,8 @@ window.addEventListener("DOMContentLoaded", function () {
             swal("Vous serez redirigé vers la page de connexion.", {
               icon: "success",
             }).then(() => {
-              window.location.href = "http://127.0.0.1:5500/HTML/login.html";
+              window.location.href =
+                "https://coudacode.github.io/TicBooster/HTML/login.html";
             });
           } else {
           }

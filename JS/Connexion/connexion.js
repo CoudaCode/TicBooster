@@ -68,7 +68,7 @@ document
         }).then(() => {
           // Redirection après fermeture du modal
           window.location.href =
-            "http://127.0.0.1:5500/HTML/creationProduit/page_produit.html";
+            "https://coudacode.github.io/TicBooster/HTML/creationProduit/page_produit.html";
         });
       } else if (responseData.status === "error") {
         document.getElementById("phoneError").classList.remove("hidden");

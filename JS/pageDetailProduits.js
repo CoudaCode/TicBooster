@@ -13,7 +13,8 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href = "http://127.0.0.1:5500/HTML/login.html";
+    window.location.href =
+      "https://coudacode.github.io/TicBooster/HTML/login.html";
   }
 
   const logoutButton = document.getElementById("logout");
@@ -112,7 +113,7 @@ window.addEventListener("DOMContentLoaded", function () {
        
           <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"
           >
-          <a href="http://127.0.0.1:5500/HTML/Vendeur/panier.html?id=${service.id}">
+          <a href="https://coudacode.github.io/TicBooster/HTML/Vendeur/panier.html?id=${service.id}">
             Commander
           </a>
         </div>

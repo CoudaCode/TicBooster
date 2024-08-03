@@ -13,7 +13,8 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href = "http://127.0.0.1:5500/HTML/login.html";
+    window.location.href =
+      "https://coudacode.github.io/TicBooster/HTML/login.html";
   }
 
   const logoutButton = document.getElementById("logout");

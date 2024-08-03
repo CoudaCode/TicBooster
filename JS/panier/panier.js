@@ -11,7 +11,8 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href = "http://127.0.0.1:5500/HTML/login.html";
+    window.location.href =
+      "https://coudacode.github.io/TicBooster/HTML/login.html";
   }
 
   const logoutButton = document.getElementById("logout");
@@ -154,14 +155,14 @@ window.addEventListener("DOMContentLoaded", function () {
           buttons: "ok",
         }).then(() => {
           window.location.href =
-            "http://127.0.0.1:5500/HTML/creationProduit/page_produit.html";
+            "https://coudacode.github.io/TicBooster/HTML/creationProduit/page_produit.html";
         });
       } else {
         swal("Erreur", result.message, {
           icon: "error",
         }).then(() => {
           window.location.href =
-            "http://127.0.0.1:5500/HTML/creationProduit/page_produit.html";
+            "https://coudacode.github.io/TicBooster/HTML/creationProduit/page_produit.html";
         });
       }
     } catch (error) {
