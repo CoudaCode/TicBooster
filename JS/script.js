@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://tickbooster-backend.onrender.com/api";
 
 // Fonction pour faire des appels API avec une gestion d'erreurs et de headers
 const fetchApiBase = async (endpoint, options = {}, isAuth, isImage) => {
