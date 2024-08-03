@@ -1,12 +1,11 @@
-const BASE_URL = "https://tickbooster-backend.onrender.com/api";
-
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./script.js";
 window.addEventListener("DOMContentLoaded", function () {
   let allServices = [];
   const servicesContainer = document.getElementById("services"); // Assurez-vous que cet élément existe
 
   const fetchServices = async () => {
     try {
-      const response = await window.fetch(`${BASE_URL}/service/`, {});
+      const response = await window.fetch(`${BASE_URL_API_DEV}/service/`, {});
       const result = await response.json();
 
       if (response.ok) {
@@ -71,8 +70,7 @@ window.addEventListener("DOMContentLoaded", function () {
             swal("Vous serez redirigé vers la page de connexion.", {
               icon: "success",
             }).then(() => {
-              window.location.href =
-                "https://coudacode.github.io/TicBooster/HTML/login.html";
+              window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
             });
           } else {
           }

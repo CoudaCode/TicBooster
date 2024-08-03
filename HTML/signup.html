@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connexion TicBooster</title>
+    <title>Inscription TicBooster Acheteur</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <link rel="shortcut icon" href="./../image/logo.webp" type="image/x-icon" />
   </head>
   <body class="bg-gray-100">
     <div class="min-h-screen flex items-center justify-center px-4">
@@ -22,16 +25,16 @@
           <div class="flex items-center justify-center mb-6">
             <img
               class="h-12 w-auto"
-              src="../../image/logo ticbooster_1.webp"
+              src="./../image/logoticbooster_1.webp"
               alt="TicBooster Logo"
             />
           </div>
 
-          <form id="loginForm">
+          <form id="registerForm">
             <div class="mb-4">
               <label for="firstname" class="block text-gray-700 mb-2"
-                >Nom
-              </label>
+                >Nom</label
+              >
               <input
                 type="text"
                 id="firstname"
@@ -39,11 +42,15 @@
                 class="w-full border border-gray-300 rounded-lg px-4 py-2"
                 placeholder="Jean"
               />
+              <div
+                id="firstnameError"
+                class="text-red-500 text-sm hidden"
+              ></div>
             </div>
             <div class="mb-4">
               <label for="lastname" class="block text-gray-700 mb-2"
-                >Prénom
-              </label>
+                >Prénom</label
+              >
               <input
                 type="text"
                 id="lastname"
@@ -51,9 +58,10 @@
                 class="w-full border border-gray-300 rounded-lg px-4 py-2"
                 placeholder="Dupont"
               />
+              <div id="lastnameError" class="text-red-500 text-sm hidden"></div>
             </div>
             <div class="mb-4">
-              <label for="email" class="block text-gray-700 mb-2"
+              <label for="phone" class="block text-gray-700 mb-2"
                 >Numéro de téléphone</label
               >
               <input
@@ -63,6 +71,7 @@
                 class="w-full border border-gray-300 rounded-lg px-4 py-2"
                 placeholder="+2250612345678"
               />
+              <div id="phoneError" class="text-red-500 text-sm hidden"></div>
             </div>
             <div class="mb-4">
               <label for="email" class="block text-gray-700 mb-2"
@@ -75,8 +84,9 @@
                 class="w-full border border-gray-300 rounded-lg px-4 py-2"
                 placeholder="jean.dupont@gmail.com"
               />
+              <div id="emailError" class="text-red-500 text-sm hidden"></div>
             </div>
-            <div class="mb-4">
+            <div class="mb-4 relative">
               <label for="password" class="block text-gray-700 mb-2"
                 >Mot de passe</label
               >
@@ -84,12 +94,39 @@
                 type="password"
                 id="password"
                 name="password"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10"
                 placeholder="********"
               />
+              <button
+                type="button"
+                id="togglePassword"
+                class="absolute mt-8 inset-y-0 right-0 px-3 py-2 text-gray-600 hover:text-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z"
+                  />
+                </svg>
+              </button>
+              <div id="passwordError" class="text-red-500 text-sm hidden"></div>
             </div>
             <button
-              type=""
+              type="submit"
               class="w-full bg-green-600 text-white rounded-lg px-4 py-2"
             >
               Créer un compte
@@ -108,6 +145,8 @@
         </div>
       </div>
     </div>
-    <script src="./../../JS/Connexion/connexion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="./../JS/Inscription/inscription.js"></script>
   </body>
 </html>

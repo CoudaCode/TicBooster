@@ -1,4 +1,4 @@
-const BASE_URL = "https://tickbooster-backend.onrender.com/api";
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./script.js";
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
   const servicesContainer = document.getElementById("services");
@@ -13,8 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href =
-      "https://coudacode.github.io/TicBooster/HTML/login.html";
+    window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
   }
 
   const logoutButton = document.getElementById("logout");
@@ -49,11 +48,11 @@ window.addEventListener("DOMContentLoaded", function () {
   }
   async function fetchServiceDetails(id) {
     try {
-      const response = await fetch(`${BASE_URL}/service/${id}`, {
+      const response = await fetch(`${BASE_URL_API_DEV}/service/${id}`, {
         method: "GET",
       });
       const result = await response.json();
-      console.log("result", result);
+
       if (response.ok) {
         renderServiceDetails(result.data);
       } else {
@@ -113,7 +112,7 @@ window.addEventListener("DOMContentLoaded", function () {
        
           <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"
           >
-          <a href="https://coudacode.github.io/TicBooster/HTML/Vendeur/panier.html?id=${service.id}">
+          <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/panier.html?id=${service.id}">
             Commander
           </a>
         </div>

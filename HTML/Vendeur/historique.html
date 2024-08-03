@@ -87,7 +87,7 @@
             </button>
             <div class="profile-menu">
               <a
-                href="./profile.html"
+                href="./../Vendeur/historique.html"
                 class="block px-4 py-2 text-blue-500 hover:bg-gray-100"
                 >Profil</a
               >
@@ -142,21 +142,29 @@
             <h3
               class="text-xl font-semibold text-center text-gray-800 mb-2"
               id="profile-name"
-            >
-              Diara Boubaker
-            </h3>
+            ></h3>
             <p class="text-center text-gray-600 mb-2" id="profile-type"></p>
             <p class="text-center text-gray-500 mb-4" id="profile-email"></p>
-            <p class="text-center text-gray-500 mb-4">+2250506070809</p>
+            <p class="text-center text-gray-500 mb-4" id="profile-phone"></p>
 
             <!-- Action Buttons -->
             <div class="text-center">
-              <button
-                class="text-gray-700 py-2 px-4 rounded border border-gray-300 mr-2 hover:bg-gray-100"
-              >
-                Modifier
-              </button>
+              <a href="./profil.html">
+                <button
+                  class="text-gray-700 py-2 px-4 rounded border border-gray-300 mr-2 hover:bg-gray-100"
+                >
+                  Modifier
+                </button>
+              </a>
             </div>
+          </div>
+          <div class="flex justify-center mt-4">
+            <a href="./../creationProduit/page_produit.html">
+              <i
+                data-lucide="circle-arrow-left"
+                class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+              ></i>
+            </a>
           </div>
         </div>
 
@@ -165,56 +173,7 @@
           class="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
         >
           <h2 class="text-2xl font-semibold mb-4">Achats Récents</h2>
-          <div class="space-y-4 flex-grow">
-            <!-- Example Card -->
-            <div class="bg-gray-50 p-4 rounded-lg shadow-md">
-              <div class="flex items-center">
-                <img
-                  src="../../image/banner/banner1.jpg"
-                  alt="Product Image"
-                  class="w-16 h-16 object-cover rounded-lg mr-4"
-                />
-                <div class="flex-grow">
-                  <h3 class="text-lg font-semibold">Table en Bois</h3>
-                  <p class="text-sm text-gray-500">Acheteur: Innocent Kam</p>
-                  <p class="text-sm text-gray-500">Date d'achat: 2024-07-16</p>
-                  <p class="text-lg font-semibold mt-2">85 000 FCFA</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-gray-50 p-4 rounded-lg shadow-md">
-              <div class="flex items-center">
-                <img
-                  src="../../image/banner/banner1.jpg"
-                  alt="Product Image"
-                  class="w-16 h-16 object-cover rounded-lg mr-4"
-                />
-                <div class="flex-grow">
-                  <h3 class="text-lg font-semibold">Table en Bois</h3>
-                  <p class="text-sm text-gray-500">Acheteur: Innocent Kam</p>
-                  <p class="text-sm text-gray-500">Date d'achat: 2024-07-16</p>
-                  <p class="text-lg font-semibold mt-2">85 000 FCFA</p>
-                </div>
-              </div>
-            </div>
-            <div class="bg-gray-50 p-4 rounded-lg shadow-md">
-              <div class="flex items-center">
-                <img
-                  src="../../image/banner/banner1.jpg"
-                  alt="Product Image"
-                  class="w-16 h-16 object-cover rounded-lg mr-4"
-                />
-                <div class="flex-grow">
-                  <h3 class="text-lg font-semibold">Table en Bois</h3>
-                  <p class="text-sm text-gray-500">Acheteur: Innocent Kam</p>
-                  <p class="text-sm text-gray-500">Date d'achat: 2024-07-16</p>
-                  <p class="text-lg font-semibold mt-2">85 000 FCFA</p>
-                </div>
-              </div>
-            </div>
-            <!-- Add more cards as needed -->
-          </div>
+          <div class="space-y-4 flex-grow" id="commande-en-cours"></div>
         </div>
       </div>
     </div>
@@ -387,6 +346,7 @@
           menu.classList.toggle("hidden");
         });
     </script>
-    <script src="./../../JS/Acheteur/profil.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="./../../JS/Acheteur/profil.js"></script>
   </body>
 </html>

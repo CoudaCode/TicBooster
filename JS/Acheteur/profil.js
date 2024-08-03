@@ -1,4 +1,8 @@
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./../script.js";
+
 window.addEventListener("DOMContentLoaded", function () {
+  lucide.createIcons();
+  const ordersContainer = document.getElementById("commande-en-cours");
   const token = localStorage.getItem("accessToken");
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
@@ -13,8 +17,7 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href =
-      "https://coudacode.github.io/TicBooster/HTML/login.html";
+    window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
   }
 
   const logoutButton = document.getElementById("logout");
@@ -44,17 +47,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const getProfile = async () => {
     try {
-      const response = await fetch(
-        "https://tickbooster-backend.onrender.com/api/users/getuser",
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`${BASE_URL_API_DEV}/users/getuser`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const result = await response.json();
-      console.log("result", result);
 
       // Assuming result is an object with user data
       if (result && result.data) {
@@ -73,4 +72,78 @@ window.addEventListener("DOMContentLoaded", function () {
   };
 
   getProfile();
+
+  const renderOrders = (orders) => {
+    ordersContainer.innerHTML = "";
+
+    // Vérifiez s'il n'y a aucune commande en attente
+    const pendingOrders = orders.filter((order) => order.status === "pending");
+
+    if (pendingOrders.length === 0) {
+      const noOrdersCard = `
+        <div class="bg-gray-50 p-4 rounded-lg shadow-md flex items-center justify-center">
+          <div class="flex-grow">
+            <p class="text-lg font-semibold">Aucune commande en cours</p>
+          </div>
+        </div>
+      `;
+      ordersContainer.insertAdjacentHTML("beforeend", noOrdersCard);
+      return; // Arrêtez l'exécution de la fonction
+    }
+
+    // Si des commandes en attente existent, affichez-les
+    pendingOrders.forEach((order) => {
+      console.log("order", order);
+      const orderCard = `
+        <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+          <div class="flex items-center">
+            <div class="flex-grow">
+              <h3 class="text-lg font-semibold">${order.services.name}</h3>
+              <p class="text-sm text-gray-500">Vendeur: ${
+                order.artisant.user.firstname
+              } ${order.artisant.user.lastname}</p>
+              <p class="text-sm text-gray-500">Date d'achat: ${new Date(
+                order.date
+              ).toLocaleDateString()}</p>
+              <p class="text-sm text-gray-500">Statut: ${
+                order.status === "pending" ? "En cours de traitement" : "Traité"
+              }</p>
+              <p class="text-lg font-semibold mt-2">Prix Total: ${
+                order.totalPrice
+              } FCFA</p>
+              <p class="text-lg font-semibold mt-2">Quantité: ${
+                order.quantity
+              }</p>
+  
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Valider la commande</button>
+            </div>
+          </div>
+        </div>
+      `;
+      ordersContainer.insertAdjacentHTML("beforeend", orderCard);
+    });
+  };
+
+  const fetchOrders = async (id) => {
+    try {
+      const response = await fetch(`${BASE_URL_API_DEV}/order/${id}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
+      console.log("result", result);
+      if (response.ok) {
+        renderOrders(result.data);
+      } else {
+        console.error(result.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  fetchOrders();
 });

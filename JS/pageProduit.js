@@ -1,5 +1,4 @@
-const BASE_URL = "https://tickbooster-backend.onrender.com/api";
-
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./script.js";
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
   const servicesContainer = document.getElementById("services");
@@ -16,6 +15,7 @@ window.addEventListener("DOMContentLoaded", function () {
   } else {
     window.location.href =
       "https://coudacode.github.io/TicBooster/HTML/login.html";
+    `${BASE_URL_LINK_DEV}/HTML/login.html`;
   }
 
   const logoutButton = document.getElementById("logout");
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const fetchServices = async () => {
     try {
-      const response = await window.fetch(`${BASE_URL}/service/`, {});
+      const response = await window.fetch(`${BASE_URL_API_DEV}/service/`, {});
       const result = await response.json();
 
       if (response.ok) {
@@ -60,8 +60,9 @@ window.addEventListener("DOMContentLoaded", function () {
   };
 
   const renderServices = (services) => {
-    servicesContainer.innerHTML = ""; // Clear previous services
+    servicesContainer.innerHTML = "";
     services.forEach((service) => {
+      console.log("service", service);
       const serviceCard = `
         <div class="bg-white shadow-md rounded-lg p-4">
           <a href="./../Acheteur/page_service_detaille.html?id=${service.id}">

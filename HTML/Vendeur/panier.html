@@ -88,7 +88,7 @@
             </button>
             <div class="profile-menu">
               <a
-                href="./profile.html"
+                href="./../Vendeur/historique.html"
                 class="block px-4 py-2 text-blue-500 hover:bg-gray-100"
                 >Profil</a
               >
@@ -135,21 +135,6 @@
         <!-- Informations sur le service (à gauche) -->
         <div class="bg-white p-6 rounded-lg shadow-md" id="service-details">
           <h2 class="text-xl font-semibold mb-4">Détails du service</h2>
-
-          <div class="flex items-center mb-4">
-            <img
-              src="../../image/i (1).webp"
-              alt="Chaise Pro"
-              class="w-32 h-32 object-contain object-center rounded"
-            />
-            <div class="ml-4">
-              <p class="text-lg font-medium">Chaise Pro</p>
-              <p class="text-gray-500">
-                Description: Chaise ergonomique et confortable.
-              </p>
-              <p class="text-gray-500">Durée de conception: 2 semaines</p>
-            </div>
-          </div>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md">
@@ -159,10 +144,9 @@
           <div class="flex justify-between items-center mb-4">
             <div class="flex items-center space-x-4">
               <div>
-                <p class="font-medium">Chaise Pro</p>
                 <div class="flex items-center space-x-2">
                   <p class="text-gray-500">
-                    Quantité: <span id="quantity-pro">2</span>
+                    Quantité: <span id="quantity-pro">1</span>
                   </p>
                   <button
                     id="decrement"
@@ -206,7 +190,7 @@
                   </button>
                 </div>
                 <p class="text-gray-500">
-                  Montant: <span id="amount-pro">300 000 FCFA</span>
+                  Prix unitaire: <span id="amount-pro"></span>
                 </p>
               </div>
             </div>
@@ -215,7 +199,7 @@
           <div class="border-t border-gray-300 my-4"></div>
           <div class="flex justify-between items-center">
             <p class="font-medium text-lg">Montant Total</p>
-            <p class="text-lg font-semibold" id="total">500 000 FCFA</p>
+            <p class="text-lg font-semibold" id="total"></p>
           </div>
           <div class="flex justify-end mt-4">
             <button
@@ -397,7 +381,7 @@
           menu.classList.toggle("hidden");
         });
     </script>
-    <script src="./../../JS/panier/panier.js"></script>
+    <script type="module" src="./../../JS/panier/panier.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>

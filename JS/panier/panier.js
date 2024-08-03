@@ -1,4 +1,4 @@
-const BASE_URL = "https://tickbooster-backend.onrender.com/api";
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./../script.js";
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
 
@@ -11,8 +11,7 @@ window.addEventListener("DOMContentLoaded", function () {
     if (sellButton) sellButton.classList.add("hidden");
     if (buyButton) buyButton.classList.add("hidden");
   } else {
-    window.location.href =
-      "https://coudacode.github.io/TicBooster/HTML/login.html";
+    window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
   }
 
   const logoutButton = document.getElementById("logout");
@@ -48,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   async function fetchServiceDetails(id) {
     try {
-      const response = await fetch(`${BASE_URL}/service/${id}`, {
+      const response = await fetch(`${BASE_URL_API_DEV}/service/${id}`, {
         method: "GET",
       });
       const result = await response.json();
@@ -132,7 +131,7 @@ window.addEventListener("DOMContentLoaded", function () {
       console.log("quantity", quantity);
       console.log("totalPrice", totalPrice);
       console.log("serviceId", id);
-      const response = await fetch(`${BASE_URL}/order/`, {
+      const response = await fetch(`${BASE_URL_API_DEV}/order/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -148,21 +147,18 @@ window.addEventListener("DOMContentLoaded", function () {
       });
       console.log("response", response);
       const result = await response.json();
-      console.log("result", result);
       if (result.status === "success") {
         swal("Commande réussie !", "Votre commande a été ajoutée au panier.", {
           icon: "success",
           buttons: "ok",
         }).then(() => {
-          window.location.href =
-            "https://coudacode.github.io/TicBooster/HTML/creationProduit/page_produit.html";
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/creationProduit/page_produit.html`;
         });
       } else {
         swal("Erreur", result.message, {
           icon: "error",
         }).then(() => {
-          window.location.href =
-            "https://coudacode.github.io/TicBooster/HTML/creationProduit/page_produit.html";
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/creationProduit/page_produit.html`;
         });
       }
     } catch (error) {

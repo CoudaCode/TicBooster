@@ -43,4 +43,39 @@ const fetchApiBase = async (endpoint, options = {}, isAuth, isImage) => {
   }
 };
 
-export { fetchApiBase };
+const BASE_URL_API_PROD = "https://tickbooster-backend.onrender.com/api";
+const BASE_URL_API_DEV = "http://localhost:4000/api";
+const BASE_URL_LINK_PROD = "https://coudacode.github.io/TicBooster";
+const BASE_URL_LINK_DEV = "http://127.0.0.1:5500";
+
+const checkValidToken = async (token) => {
+  try {
+    const response = await fetch(`${BASE_URL_API_DEV}/users/check-token`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token,
+      }),
+    });
+
+    const result = await response.json();
+    console.log("result", result);
+    if (result.status === "error") {
+      window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
+    } else {
+      console.log("token valide");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+export {
+  BASE_URL_API_DEV,
+  BASE_URL_API_PROD,
+  BASE_URL_LINK_DEV,
+  BASE_URL_LINK_PROD,
+  checkValidToken,
+  fetchApiBase,
+};
