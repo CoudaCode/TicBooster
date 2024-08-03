@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:4000/api";
+const BASE_URL = "https://tickbooster-backend.onrender.com/api";
 
 window.addEventListener("DOMContentLoaded", function () {
   let allServices = [];

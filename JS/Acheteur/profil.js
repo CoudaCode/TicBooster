@@ -43,12 +43,15 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const getProfile = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:4000/api/users/getuser", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://tickbooster-backend.onrender.com/api/users/getuser",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const result = await response.json();
       console.log("result", result);
 
