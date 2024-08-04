@@ -61,11 +61,8 @@ const checkValidToken = async (token) => {
     });
 
     const result = await response.json();
-    console.log("result", result);
     if (result.status === "error") {
       window.location.href = `${BASE_URL_LINK_DEV}/HTML/login.html`;
-    } else {
-      console.log("token valide");
     }
   } catch (error) {
     console.log(error);

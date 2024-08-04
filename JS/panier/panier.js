@@ -152,13 +152,13 @@ window.addEventListener("DOMContentLoaded", function () {
           icon: "success",
           buttons: "ok",
         }).then(() => {
-          window.location.href = `${BASE_URL_LINK_DEV}/HTML/creationProduit/page_produit.html`;
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/page_produit.html`;
         });
       } else {
         swal("Erreur", result.message, {
           icon: "error",
         }).then(() => {
-          window.location.href = `${BASE_URL_LINK_DEV}/HTML/creationProduit/page_produit.html`;
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/page_produit.html`;
         });
       }
     } catch (error) {

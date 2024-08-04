@@ -112,7 +112,7 @@ window.addEventListener("DOMContentLoaded", function () {
        
           <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded"
           >
-          <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/panier.html?id=${service.id}">
+          <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/confirmation.html?id=${service.id}">
             Commander
           </a>
         </div>

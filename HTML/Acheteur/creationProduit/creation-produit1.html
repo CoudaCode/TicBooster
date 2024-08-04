@@ -3,218 +3,221 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>panier</title>
-    <link rel="stylesheet" href="./../../CSS/Vendeur/panier.css" />
+    <title>Création de service 1</title>
+    <link
+      rel="stylesheet"
+      href="./../../../CSS/creationProduit/creation-produit1.css"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="shortcut icon"
-      href="./../../image/logo.webp"
+      href="./../../../image/logo.webp"
       type="image/x-icon"
     />
+
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
   <style>
-    .custom-button {
-      background-color: orange;
-      color: black;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .custom-button:hover {
-      background-color: darkorange;
-    }
-
-    .profile-container {
-      position: relative;
-      display: inline-block;
-    }
-    .profile-menu {
+    .dropdown {
       display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: white;
-      border: 1px solid #ddd;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      padding: 10px;
-      border-radius: 4px;
     }
-    .profile-container:hover .profile-menu {
+    .dropdown.show {
       display: block;
     }
-    .hidden {
-      display: none;
-    }
   </style>
-
   <body class="bg-gray-100">
-    <nav class="bg-white-200 p-4">
-      <div class="container mx-auto flex justify-between items-center px-8">
-        <div class="flex-shrink-0">
-          <a href="./../creationProduit/page_produit.html">
-            <img src="./../../image/logo.webp" alt="Logo" class="h-20 w-50" />
-          </a>
-        </div>
-
-        <div class="flex space-x-4 items-center">
-          <!-- Boutons "Vendre" et "Acheter" visibles uniquement lorsqu'il est non connecté -->
-          <a
-            href="Vendeur/formulaire_vendeur.html"
-            class="sell-button hidden bg-green-500 text-white px-4 py-2 rounded"
-            >Devenir Vendeur</a
-          >
-          <a
-            href="Acheteur/formulaire_acheteur.html"
-            class="buy-button hidden bg-orange-500 text-white px-4 py-2 rounded"
-            >Acheter</a
-          >
-
-          <!-- Icône de profil visible uniquement lorsqu'il est connecté -->
-          <div id="profile-icon" class="profile-container hidden">
-            <button class="text-gray-500 focus:outline-none">
-              <i class="fas fa-user-circle text-2xl"></i>
-            </button>
-            <div class="profile-menu">
-              <a
-                href="./../Vendeur/historique.html"
-                class="block px-4 py-2 text-blue-500 hover:bg-gray-100"
-                >Profil</a
-              >
-              <button
-                id="devenirVendeur"
-                class="block px-4 py-2 text-red-500 hover:bg-gray-100"
-              >
-                Devenir Vendeur
-              </button>
-              <button
-                id="logout"
-                class="block px-4 py-2 text-red-500 hover:bg-gray-100"
-              >
-                Déconnexion
-              </button>
-            </div>
-          </div>
-
-          <div class="md:hidden">
-            <button id="menu-toggle" class="text-gray-500 focus:outline-none">
-              <i class="fas fa-bars"></i>
-            </button>
-          </div>
-        </div>
+    <header class="bg-white shadow w-full">
+      <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-gray-900">Header Content</h1>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="Vendeur/formulaire_vendeur.html"
-            class="block w-auto bg-green-500 text-white px-4 py-2 rounded"
-            >Devenir Vendeur</a
-          >
-        </div>
-      </div>
-    </nav>
-    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-      <a
-        href="./../creationProduit/page_produit.html"
-        class="text-sm text-gray-500 underline"
-        >Continuer votre achat</a
-      >
+    </header>
 
-      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Informations sur le service (à gauche) -->
-        <div class="bg-white p-6 rounded-lg shadow-md" id="service-details">
-          <h2 class="text-xl font-semibold mb-4">Détails du service</h2>
-        </div>
+    <main class="">
+      <section class="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">
+          Nos Produits
+        </h2>
 
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h2 class="text-xl font-semibold mb-4">Résumé de la commande</h2>
+        <!-- Ajoutez votre contenu principal ici -->
+      </section>
+    </main>
 
-          <!-- Premier produit -->
-          <div class="flex justify-between items-center mb-4">
-            <div class="flex items-center space-x-4">
-              <div>
-                <div class="flex items-center space-x-2">
-                  <p class="text-gray-500">
-                    Quantité: <span id="quantity-pro">1</span>
-                  </p>
-                  <button
-                    id="decrement"
-                    data-price="150000"
-                    class="text-gray-500 focus:outline-none"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 cursor-pointer"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M18 12H6"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    id="increment"
-                    data-price="150000"
-                    class="text-gray-500 focus:outline-none"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4 cursor-pointer"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <p class="text-gray-500">
-                  Prix unitaire: <span id="amount-pro"></span>
-                </p>
-              </div>
-            </div>
+    <!-- commence ici -->
+
+    <!-- Navbar et footer sont ici -->
+
+    <!-- Contenu central -->
+    <div class="container mx-auto p-4">
+      <div class="flex gap-0">
+        <!-- Barre latérale -->
+        <div class="w-1/4 space-y-4">
+          <div class="bg-white rounded-lg shadow p-4">
+            <h3 class="font-bold text-white text-center bg-gray-700 mb-2 py-2">
+              MON COMPTE
+            </h3>
+            <ul>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 text-gray-600 rounded mb-2 text-center"
+                  >MON PROFIL</a
+                >
+              </li>
+              <li>
+                <a href="#" class="block py-2 text-gray-600 rounded text-center"
+                  >MOT DE PASSE</a
+                >
+              </li>
+            </ul>
           </div>
-
-          <div class="border-t border-gray-300 my-4"></div>
-          <div class="flex justify-between items-center">
-            <p class="font-medium text-lg">Montant Total</p>
-            <p class="text-lg font-semibold" id="total"></p>
+          <div class="bg-white rounded-lg shadow p-4">
+            <h3 class="font-bold text-center py-2 text-white mb-2 bg-gray-700">
+              PROFIL ARTISAN
+            </h3>
+            <ul>
+              <li>
+                <a href="#" class="block py-2 text-gray-700 text-center"
+                  >MES OFFRES</a
+                >
+              </li>
+            </ul>
           </div>
-          <div class="flex justify-end mt-4">
-            <button
-              id="add-to-cart"
-              class="bg-yellow-500 text-white px-4 py-2 rounded-md"
+        </div>
+        <!-- Contenu principal -->
+
+        <!-- Contenu principal -->
+        <div class="w-2/3">
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <div
+              class="bg-green-800 rounded-lg flex p-4 flex-col items-center justify-center mb-10"
             >
-              Ajouter au panier
-            </button>
+              <h2 class="text-2xl font-bold text-white">
+                CRÉER UNE NOUVELLE OFFRE
+              </h2>
+              <button
+                class="bg-green text-white rounded-full p-2 text-4xl hover:underline"
+              >
+                <a
+                  href="./creation-produit2.html"
+                  class="text-white hover:underline"
+                  >+</a
+                >
+              </button>
+            </div>
+            <div class="grid grid-cols-3 gap-4">
+              <!-- Carte 1 -->
+              <div class="bg-white rounded-lg shadow p-4 relative">
+                <img
+                  src="../../image/téléchargement.jfif"
+                  alt="Produit"
+                  class="mb-4 rounded"
+                />
+                <h3 class="text-lg font-semibold">Conception de Commode</h3>
+                <div class="flex items-center justify-between text-gray-500">
+                  <p class="flex items-center">56 500 FCFA</p>
+                  <div class="flex items-center relative">
+                    <i class="fas fa-eye mr-4"></i>
+                    <i class="fas fa-ellipsis-v cursor-pointer dots"></i>
+                    <div
+                      class="dropdown mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg absolute right-0 bottom-full mb-2"
+                    >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Modifier</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Supprimer</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg shadow p-4 mt-4 relative">
+                <img
+                  src="../../image/téléchargement.jfif"
+                  alt="Produit"
+                  class="mb-4 rounded"
+                />
+                <h3 class="text-lg font-semibold">Autre Produit</h3>
+                <div class="flex items-center justify-between text-gray-500">
+                  <p class="flex items-center">42 000 FCFA</p>
+                  <div class="flex items-center relative">
+                    <i class="fas fa-eye mr-4"></i>
+                    <i class="fas fa-ellipsis-v cursor-pointer dots"></i>
+                    <div
+                      class="dropdown mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg absolute right-0 bottom-full mb-2"
+                    >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Modifier</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Supprimer</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte 2 -->
+              <div class="bg-white rounded-lg shadow p-4 relative">
+                <img
+                  src="../../image/téléchargement.jfif"
+                  alt="Produit"
+                  class="mb-4 rounded"
+                />
+                <h3 class="text-lg font-semibold">Conception de Commode</h3>
+                <div class="flex items-center justify-between text-gray-500">
+                  <p class="flex items-center">56 500 FCFA</p>
+                  <div class="flex items-center relative">
+                    <a href="">
+                      <i class="fas fa-eye mr-4"></i>
+                    </a>
+                    <i class="fas fa-ellipsis-v cursor-pointer dots"></i>
+                    <div
+                      class="dropdown mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg absolute right-0 bottom-full mb-2"
+                    >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Modifier</a
+                      >
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >Supprimer</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carte 3 -->
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- footer -->
-    <section class="bg-white mt-4">
+    <!-- Navbar et footer sont ici -->
+
+    <!-- fini ici -->
+    <section class="bg-white">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
       >
@@ -228,7 +231,7 @@
               class="flex justify-center space-x-3 lg:justify-start"
             >
               <div class="w-auto h-auto rounded-full dark:bg-violet-600">
-                <img src="./../../image/logo.webp" class="w-auto h-24" />
+                <img src="../../image/logo.webp" class="w-auto h-24" />
                 <div class="self-center text-2xl font-semibold">
                   <div class="flex justify-start space-x-3">
                     <a
@@ -373,15 +376,10 @@
         <div class="py-6 text-sm text-center">Copyright TICBOOSTER 2024</div>
       </footer>
     </section>
-    <script>
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          var menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("hidden");
-        });
-    </script>
-    <script type="module" src="./../../JS/panier/panier.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script
+      type="module"
+      src="./../../JS/creationProduit/creation-produit1.js"
+    ></script>
   </body>
 </html>

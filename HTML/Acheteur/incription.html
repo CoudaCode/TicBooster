@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inscription TicBooster Vendeur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./../../image/logo.webp"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <div
+        class="max-w-7xl w-full bg-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row"
+      >
+        <div class="md:w-1/2">
+          <img
+            class="h-full w-full object-cover object-contain object-center"
+            src="./../../image/login-vendeur.jpg"
+            alt="Woodworking"
+          />
+        </div>
+        <div class="md:w-1/2 p-8">
+          <div class="flex items-center justify-center mb-6">
+            <img
+              class="h-12 w-auto"
+              src="./../../image/logoticbooster_1.webp"
+              alt="TicBooster Logo"
+            />
+          </div>
+          <div class="text-center text-gray-500 mb-4">
+            Renseignez vos informations Connecter
+          </div>
+          <form
+            id="registerForm"
+            class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md dark:bg-gray-800"
+          >
+            <!-- Information Personnelle -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-4">
+                Information Personnelle
+              </h3>
+              <div class="grid gap-6 mb-6 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="firstname"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Prénom</label
+                  >
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="John"
+                  />
+                  <span id="firstnameError" class="text-red-500 hidden"></span>
+                </div>
+                <div>
+                  <label
+                    for="lastname"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Nom</label
+                  >
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Doe"
+                  />
+                  <span id="lastnameError" class="text-red-500 hidden"></span>
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="test@test.com"
+                  />
+                  <span id="emailError" class="text-red-500 hidden"></span>
+                </div>
+                <div class="mb-6">
+                  <label
+                    for="phoneNumber"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Numéro de téléphone</label
+                  >
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="+2250102030405"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                  <span id="phoneError" class="text-red-500 hidden"></span>
+                </div>
+                <div class="relative">
+                  <label
+                    for="passwordArtisant"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    name="passwordArtisant"
+                    id="passwordArtisant"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 pr-10"
+                    placeholder="Mot de passe"
+                  />
+                  <button
+                    type="button"
+                    id="togglePassword"
+                    class="absolute mt-4 inset-y-0 right-0 flex items-center px-3 py-2 text-gray-600 hover:text-gray-800"
+                  >
+                    <i data-lucide="eye"></i>
+                  </button>
+                  <span id="passwordError" class="text-red-500 hidden"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infos Entreprise -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-4">Infos Entreprise</h3>
+              <div class="grid gap-6 mb-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div>
+                  <label
+                    for="job"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Job</label
+                  >
+                  <input
+                    type="text"
+                    name="job"
+                    id="job"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Job"
+                  />
+                  <div id="jobError" class="text-red-500 hidden"></div>
+                </div>
+                <div>
+                  <label
+                    for="categoryId"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Catégorie</label
+                  >
+                  <select
+                    id="categoryId"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  >
+                    <option value="">Choisissez une catégorie</option>
+                    <option value="1">Agroalimentaire, Restauration</option>
+                    <option value="2">Construction et Batiment</option>
+                    <option value="3">Mecanique, Electronique</option>
+                    <option value="4">Mobilier et Ameublement</option>
+                    <option value="5">Textile, Habillement</option>
+                    <option value="6">Audiovisuel, Communication</option>
+                    <option value="7">Hygiène et soins corporels</option>
+                    <option value="8">Art et decoration</option>
+                  </select>
+                  <span id="categoryError" class="text-red-500 hidden"></span>
+                </div>
+                <div>
+                  <label
+                    for="lat"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Latitude</label
+                  >
+                  <input
+                    type="text"
+                    id="lat"
+                    name="lat"
+                    placeholder="Latitude"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="long"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Longitude</label
+                  >
+                  <input
+                    type="text"
+                    id="long"
+                    name="long"
+                    placeholder="Longitude"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="description"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Description</label
+                  >
+                  <textarea
+                    id="description"
+                    rows="4"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
+                <div class="w-full">
+                  <label
+                    for="getLocation"
+                    class="block text-sm font-medium text-gray-900 dark:text-white"
+                    >Localisation</label
+                  >
+                  <div class="flex items-center space-x-4">
+                    <button
+                      type="button"
+                      id="getLocation"
+                      class="bg-green-600 text-white rounded-lg px-4 py-2"
+                    >
+                      Obtenir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <button
+                type="submit"
+                class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Enregistrer et continuer
+              </button>
+            </div>
+
+            <div class="">
+              <span>J'ai déjà un compte</span>
+              <a href="./connexion.html" class="text-green-600 hover:underline"
+                >Se connecter</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="./../../JS/Vendeur/inscription.js"></script>
+  </body>
+</html>

@@ -11,13 +11,10 @@
       rel="stylesheet"
     />
 
-    <link
-      rel="shortcut icon"
-      href="./../../image/logo.webp"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./../image/logo.webp" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <style>
       .profile-container {
         position: relative;
@@ -87,7 +84,12 @@
                 id="devenirVendeur"
                 class="block px-4 py-2 text-red-500 hover:bg-gray-100"
               >
-                Devenir Vendeur
+                <a
+                  href="./Acheteur/incription.html"
+                  class="text-green-600 hover:underline"
+                >
+                  Devenir Vendeur
+                </a>
               </button>
               <button
                 id="logout"
@@ -420,6 +422,7 @@
         });
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <script type="module" src="./../../JS/pageProduit.js"></script>
   </body>
 </html>

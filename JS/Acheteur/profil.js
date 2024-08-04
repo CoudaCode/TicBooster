@@ -114,8 +114,11 @@ window.addEventListener("DOMContentLoaded", function () {
               <p class="text-lg font-semibold mt-2">Quantité: ${
                 order.quantity
               }</p>
-  
-              <button class="bg-green-500 text-white px-4 py-2 rounded-md">Valider la commande</button>
+              <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/confirmation.html?id=${
+        order.id
+      }">
+              <button class="bg-green-500 text-white px-4 py-2 rounded-md" >Valider la commande</button>
+              </a>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import {
   BASE_URL_API_DEV,
   BASE_URL_LINK_DEV,
   checkValidToken,
-} from "./../script.js";
+} from "../script.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   lucide.createIcons();

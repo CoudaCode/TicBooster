@@ -1,5 +1,10 @@
-import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./../script.js";
-window.addEventListener("DOMContentLoaded", function () {
+import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "../script.js";
+window.addEventListener("DOMContentLoaded", () => {
+  lucide.createIcons();
+  const link = BASE_URL_API_DEV;
+
+  const link2 = BASE_URL_LINK_DEV;
+
   document
     .getElementById("loginForm")
     .addEventListener("submit", async function (event) {
@@ -59,17 +64,19 @@ window.addEventListener("DOMContentLoaded", function () {
       };
 
       try {
-        const response = await fetch(`${BASE_URL_API_DEV}/auth/login`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(obj),
-        });
+        const response = await fetch(
+          `${BASE_URL_API_DEV}/artisant/auth/login`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          }
+        );
 
         const responseData = await response.json();
 
-        console.log("Login successful:", responseData);
         if (responseData.status === "success") {
           localStorage.setItem("accessToken", responseData.data.token);
           swal({
@@ -79,7 +86,7 @@ window.addEventListener("DOMContentLoaded", function () {
             button: "OK",
           }).then(() => {
             // Redirection après fermeture du modal
-            window.location.href = `${BASE_URL_LINK_DEV}/HTML/page_produit.html`;
+            window.location.href = `${BASE_URL_LINK_DEV}/HTML/`;
           });
         } else if (responseData.status === "error") {
           document.getElementById("phoneError").classList.remove("hidden");
@@ -99,5 +106,18 @@ window.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("password").addEventListener("input", function () {
     document.getElementById("passwordError").classList.add("hidden");
+  });
+
+  const togglePassword = document.getElementById("togglePassword");
+  const passwordInput = document.getElementById("password");
+  togglePassword.addEventListener("click", function () {
+    const type =
+      passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
+    this.innerHTML =
+      type === "password"
+        ? '<i data-lucide="eye"></i>'
+        : '<i data-lucide="eye-off"></i>';
+    lucide.createIcons();
   });
 });
