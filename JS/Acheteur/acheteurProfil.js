@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const result = await response.json();
 
       if (result && result.data) {
+        profile.textContent = `${result.data.firstname} ${result.data.lastname}`;
         const { firstname, lastname, email, phoneNumber, type } = result.data;
 
         // Met à jour le DOM avec les données du profil

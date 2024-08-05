@@ -2,6 +2,7 @@ import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./../script.js";
 
 window.addEventListener("DOMContentLoaded", function () {
   lucide.createIcons();
+  const profile = document.getElementById("profile");
   const ordersContainer = document.getElementById("commande-en-cours");
   const token = localStorage.getItem("accessToken");
   const sellButton = document.querySelector(".sell-button");
@@ -57,9 +58,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
       // Assuming result is an object with user data
       if (result && result.data) {
+        profile.textContent = `${result.data.firstname} ${result.data.lastname}`;
         const { firstname, lastname, email, phoneNumber, type } = result.data;
 
-        // Update DOM with user data
+        // Met à jour le DOM avec les données du profil
         if (profileName) profileName.textContent = `${firstname} ${lastname}`;
         if (profileEmail) profileEmail.textContent = email;
         if (profilePhone) profilePhone.textContent = phoneNumber;

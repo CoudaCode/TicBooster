@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Page</title>
-
+    <title>Profile Artisant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./../../image/logo.webp"
+      type="image/x-icon"
+    />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/lucide@latest/dist/lucide.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="shortcut icon" href="./../image/logo.webp" type="image/x-icon" />
-
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
 
   <style>
@@ -33,144 +35,61 @@
     .custom-button:hover {
       background-color: darkorange;
     }
-
-    .profile-container {
-      position: relative;
-      display: inline-block;
-    }
-    .profile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: white;
-      border: 1px solid #ddd;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      padding: 10px;
-      border-radius: 4px;
-    }
-    .profile-container:hover .profile-menu {
-      display: block;
-    }
-    .hidden {
-      display: none;
-    }
   </style>
 
   <body class="bg-gray-100">
-    <header class="bg-white shadow-md">
-      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex-1 md:flex md:items-center md:gap-12">
-            <a class="block text-teal-600" href="#">
-              <img
-                src="./../image/logo.webp"
-                class="mr-3 h-6 sm:h-12"
-                alt="Logo"
-              />
-            </a>
-          </div>
-
-          <div class="md:flex md:items-center md:gap-12 flex">
-            <nav aria-label="Global" class="hidden md:block">
-              <div class="flex items-center gap-6 text-sm">
-                <input
-                  type="text"
-                  id="search"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full lg:w-96 p-2.5"
-                  placeholder="Rechercher..."
-                  required
-                />
-              </div>
-            </nav>
-
-            <div class="relative flex items-center gap-4 group">
-              <button class="flex items-center text-sm focus:outline-none">
-                <i class="fas fa-user-circle text-2xl"></i>
-                <span
-                  id="profile"
-                  class="ml-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >John Doe</span
-                >
-                <svg
-                  class="w-4 h-4 ml-1 text-gray-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.707a1 1 0 011.414 0L10 11.086l3.293-3.379a1 1 0 011.414 1.414l-4 4.1a1 1 0 01-1.414 0l-4-4.1a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </button>
-              <div
-                id="userMenu"
-                class="absolute right-0 mt-2 w-48 bg-white border mt-32 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              >
-                <a
-                  href="./Vendeur/profil.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >Profile</a
-                >
-
-                <a
-                  href="./client/incription.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >Devenir Artisant</a
-                >
-                <a
-                  id="logout"
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >Deconnexion</a
-                >
-              </div>
-            </div>
-
-            <div class="block md:hidden">
+    <section class="bg-white shadow">
+      <header
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="flex items-center">
+          <a href="./profil.html">
+            <img src="./../../image/logo.webp" alt="Logo" class="h-10" />
+          </a>
+        </div>
+        <div class="relative">
+          <div class="flex items-center cursor-pointer group">
+            <i class="fas fa-user text-2xl text-gray-700"></i>
+            <div
+              class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
               <button
-                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-                id="searchToggle"
+                id="logout"
+                class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
+                Déconnexion
               </button>
             </div>
           </div>
         </div>
+      </header>
+    </section>
+
+    <div class="container mx-auto p-4">
+      <h1 class="text-3xl font-semibold mb-6 underline-green">
+        Services de l'artisant
+      </h1>
+
+      <div class="flex flex-wrap -mx-2">
+        <div class="w-full p-2">
+          <a href="./creationProduit/creation-produit2.html">
+            <button class="bg-green-600 text-white rounded-lg px-4 py-2">
+              <i class="fas fa-plus mr-2"></i> Ajouter un service
+            </button>
+          </a>
+
+          <a href="./../client/creationProduit/voirCommande.html">
+            <button class="bg-green-600 text-white rounded-lg px-4 py-2">
+              <i class="fa-regular fa-eye"></i> Voir les commandes
+            </button>
+          </a>
+        </div>
+
+        <div class="w-full lg:w-3/4 flex flex-wrap" id="services"></div>
+        <div class="w-full lg:w-1/4 p-2" id="profile"></div>
       </div>
-    </header>
-
-    <div
-      id="mobileSearchContainer"
-      class="lg:hidden hidden justify-between items-center w-full"
-    >
-      <input
-        type="text"
-        id="search-mobile"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 transform -translate-y-full transition-transform duration-300"
-        placeholder="Rechercher..."
-        required
-      />
     </div>
 
-    <div class="container mx-auto p-4" id="service-details">
-      <!-- Details of the service -->
-    </div>
     <section class="bg-white mt-4">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
@@ -309,26 +228,9 @@
         </div>
       </footer>
     </section>
-    <script>
-      document
-        .getElementById("searchToggle")
-        .addEventListener("click", function () {
-          const searchMobile = document.getElementById("search-mobile");
-          const mobileSearchContainer = document.getElementById(
-            "mobileSearchContainer"
-          );
 
-          // Toggle the display of the search input
-          if (searchMobile.classList.contains("-translate-y-full")) {
-            searchMobile.classList.remove("-translate-y-full");
-            mobileSearchContainer.classList.remove("hidden");
-          } else {
-            searchMobile.classList.add("-translate-y-full");
-            mobileSearchContainer.classList.add("hidden");
-          }
-        });
-    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="module" src="./../JS/pageDetailProduits.js"></script>
+    <script type="module" src="./../../JS/Vendeur/profil.js"></script>
   </body>
 </html>

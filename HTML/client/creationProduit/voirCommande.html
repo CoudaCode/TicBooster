@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes commandes client</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./../../../image/logo.webp"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+
+  <style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: darkorange;
+    }
+  </style>
+
+  <body class="bg-gray-100">
+    <section class="bg-white shadow">
+      <header
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="flex items-center">
+          <a href="./../profil.html">
+            <img src="./../../../image/logo.webp" alt="Logo" class="h-10" />
+          </a>
+        </div>
+        <div class="relative">
+          <div class="flex items-center cursor-pointer group">
+            <i class="fas fa-user text-2xl text-gray-700"></i>
+            <div
+              class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <button
+                id="logout"
+                class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                Déconnexion
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <div class="container mx-auto p-4">
+      <h1 class="text-3xl font-semibold mb-6 underline-green">
+        Mes commandes en cours
+      </h1>
+
+      <div class="flex flex-wrap -mx-2">
+        <div class="w-full lg:w-full flex flex-wrap" id="commande"></div>
+        <!-- <div class="w-full lg:w-1/4 p-2" id="profile"></div> -->
+      </div>
+    </div>
+
+    <section class="bg-white mt-4">
+      <footer
+        class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
+      >
+        <div
+          class="container flex flex-col justify-between py-8 mx-auto space-y-6 lg:flex-row lg:space-y-0"
+        >
+          <div class="lg:w-1/4 flex flex-col items-center lg:items-start">
+            <a rel="noopener noreferrer" href="#" class="flex justify-center">
+              <img
+                src="../../../image/logo.webp"
+                class="w-22 h-20"
+                alt="Logo"
+              />
+            </a>
+            <div class="flex justify-center space-x-4 mt-4 ml-4">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="Facebook"
+                class="text-blue-600"
+              >
+                <i class="fab fa-facebook-f fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="Instagram"
+                class="text-pink-600"
+              >
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="TikTok"
+                class="text-black"
+              >
+                <i class="fab fa-tiktok fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="WhatsApp"
+                class="text-green-500"
+              >
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 text-sm gap-x-3 gap-y-6 lg:w-3/4 sm:grid-cols-3"
+          >
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                Categories
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Agroalimentaire, Restauration</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Construction et Bâtiment</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mécanique, Électronique</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mobilier et Ameublement</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Textile, Habillement</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Audiovisuel, Communication</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Hygiène et soins corporels</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Art et décoration</a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                TicBooster
+              </h3>
+              <ul class="space-y-1">
+                <li><a rel="noopener noreferrer" href="#">Nos valeurs</a></li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Devenir vendeur</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Devenir client</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >A propos de TICBOOSTER</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="uppercase dark:text-gray-900 font-bold">
+                Statistiques
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">10 000 vendeurs</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >27 000 commandes en cours</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >15 000 000 commandes effectuées</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="py-4 text-sm text-center border-t border-gray-200">
+          <p class="mt-2">Copyright TICBOOSTER 2024</p>
+        </div>
+      </footer>
+    </section>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="module" src="./../../../JS/Vendeur/voirCommande.js"></script>
+  </body>
+</html>

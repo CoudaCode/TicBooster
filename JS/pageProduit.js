@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", function () {
   const servicesContainer = document.getElementById("services");
   const searchInput = document.getElementById("search-input");
 
+  const profile = document.getElementById("profile");
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
@@ -43,6 +44,24 @@ window.addEventListener("DOMContentLoaded", function () {
 
   let allServices = [];
 
+  const getProfile = async () => {
+    try {
+      const response = await fetch(`${BASE_URL_API_DEV}/users/getuser`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
+
+      profile.textContent = `${result.data.firstname} ${result.data.lastname}`;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getProfile();
+
   const fetchServices = async () => {
     try {
       const response = await window.fetch(`${BASE_URL_API_DEV}/service/`, {});
@@ -65,12 +84,8 @@ window.addEventListener("DOMContentLoaded", function () {
       console.log("service", service);
       const serviceCard = `
         <div class="bg-white shadow-md rounded-lg p-4">
-          <a href="./../Acheteur/page_service_detaille.html?id=${service.id}">
-            <img
-              src="${service.images[0]}" // Assuming the service object has an imageUrl property
-              alt="${service.name}"
-              class="w-full h-64 object-contain object-center rounded-t-lg"
-          />
+          <a href="${BASE_URL_LINK_DEV}/HTML/page_service_detaille.html?id=${service.id}">
+           
           <div class="mt-4">
             <div class="flex justify-between mb-2">
               <h2 class="text-gray-800">${service.name}</h2>

@@ -1,7 +1,6 @@
 import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./../script.js";
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
-
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
@@ -61,17 +60,30 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  const getProfile = async () => {
+    try {
+      const response = await fetch(`${BASE_URL_API_DEV}/users/getuser`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const result = await response.json();
+
+      profile.textContent = `${result.data.firstname} ${result.data.lastname}`;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  getProfile();
   function renderServiceDetails(service) {
     const serviceContainer = document.getElementById("service-details");
 
     if (serviceContainer) {
       serviceContainer.innerHTML = `
         <div class="flex items-center mb-4">
-          <img
-            src="${service.images[0]}"
-            alt="${service.name}"
-            class="w-32 h-32 object-contain object-center rounded"
-          />
+          
           <div class="ml-4">
             <p class="text-lg font-medium">${service.name}</p>
             <p class="text-gray-500">Description: ${service.description}</p>

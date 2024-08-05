@@ -1,6 +1,9 @@
 import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "../script.js";
 
 window.addEventListener("DOMContentLoaded", () => {
+  const logout = document.getElementById("logout");
+  const profileContainer = document.getElementById("profile");
+  const token = localStorage.getItem("artisantToken");
   const phoneInput = document.getElementById("phoneNumber");
   const firstnameInput = document.getElementById("firstname");
   const lastnameInput = document.getElementById("lastname");
@@ -8,7 +11,26 @@ window.addEventListener("DOMContentLoaded", () => {
   const categoryInput = document.getElementById("categoryId");
   const passwordInput = document.getElementById("passwordArtisant");
   const getLocationBtn = document.getElementById("getLocation");
-  const emailInput = document.getElementById("email");
+
+  logout.addEventListener("click", function () {
+    swal({
+      title: "Déconnexion",
+      text: "Voulez-vous vous déconnecter ?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((action) => {
+      if (action) {
+        swal("Vous êtes déconnecté !", "Déconnexion réussie.", {
+          icon: "success",
+        }).then(() => {
+          localStorage.removeItem("artisantToken");
+          window.location.reload();
+        });
+      } else {
+      }
+    });
+  });
   const phonePattern = /^\+225\d{10}$/;
   // Fonction pour valider le numéro de téléphone
   function validatePhoneNumber() {
@@ -24,19 +46,19 @@ window.addEventListener("DOMContentLoaded", () => {
       return false;
     }
   }
-  function validateEmail() {
-    const emailError = document.getElementById("emailError");
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(emailInput.value.trim())) {
-      emailError.classList.remove("hidden");
-      emailError.textContent = "Adresse email invalide.";
-      return false;
-    } else {
-      emailError.classList.add("hidden");
-      emailError.textContent = "";
-      return true;
-    }
-  }
+  // function validateEmail() {
+  //   const emailError = document.getElementById("emailError");
+  //   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailPattern.test(emailInput.value.trim())) {
+  //     emailError.classList.remove("hidden");
+  //     emailError.textContent = "Adresse email invalide.";
+  //     return false;
+  //   } else {
+  //     emailError.classList.add("hidden");
+  //     emailError.textContent = "";
+  //     return true;
+  //   }
+  // }
 
   // Fonction pour valider le mot de passe
   function validatePassword() {
@@ -89,7 +111,7 @@ window.addEventListener("DOMContentLoaded", () => {
   passwordInput.addEventListener("input", validatePassword);
   jobInput.addEventListener("input", validateJob);
   categoryInput.addEventListener("change", validateCategory);
-  emailInput.addEventListener("input", validateEmail);
+  // emailInput.addEventListener("input", validateEmail);
 
   // Affichage et masquage du mot de passe
   const togglePassword = document.getElementById("togglePassword");
@@ -126,6 +148,34 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const getProfile = async () => {
+    try {
+      const response = await fetch(`${BASE_URL_API_DEV}/artisant/`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      console.log(data.data);
+      renderProfile(data.data);
+      const profile = data.data;
+      firstnameInput.value = profile.user.firstname;
+      lastnameInput.value = profile.user.lastname;
+      phoneInput.value = profile.user.phoneNumber;
+      categoryInput.value = profile.categoryId;
+      jobInput.value = profile.job;
+      lat.value = profile.lat;
+      long.value = profile.long;
+      description.value = profile.description;
+    } catch (error) {
+      console.error("Erreur lors de l'appel API:", error);
+    }
+  };
+
+  getProfile();
+
   document
     .getElementById("registerForm")
     .addEventListener("submit", async (e) => {
@@ -136,15 +186,12 @@ window.addEventListener("DOMContentLoaded", () => {
       const isPasswordValid = validatePassword();
       const isJobValid = validateJob();
       const isCategoryValid = validateCategory();
-      const isEmailValid = validateEmail();
+      // const isEmailValid = validateEmail();
 
       // Vérifier si tous les champs sont valides
       const isValid =
-        isPhoneValid &&
-        isPasswordValid &&
-        isJobValid &&
-        isCategoryValid &&
-        isEmailValid;
+        isPhoneValid && isPasswordValid && isJobValid && isCategoryValid;
+      // &&isEmailValid;
 
       if (!isValid) return;
 
@@ -152,7 +199,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const payload = {
           firstname: firstnameInput.value,
           lastname: lastnameInput.value,
-          email: emailInput.value,
+          // email: emailInput.value,
           phoneNumber: phoneInput.value,
           passwordArtisant: passwordInput.value,
           categoryId: categoryInput.value,
@@ -165,9 +212,10 @@ window.addEventListener("DOMContentLoaded", () => {
         console.log("payload", payload);
 
         const response = await fetch(`${BASE_URL_API_DEV}/artisant`, {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify(payload),
         });
@@ -182,15 +230,14 @@ window.addEventListener("DOMContentLoaded", () => {
             icon: "success",
             button: "Fermer",
           }).then(() => {
-            window.location.href = `${BASE_URL_LINK_DEV}/HTML/client/connexion.html`;
+            window.location.href = `${BASE_URL_LINK_DEV}/HTML/client/profil.html`;
           });
         } else {
           swal({
             title: "Erreur",
             text:
-              result.message === "User with this phone number already exists"
-                ? "Cet artisan existe déjà"
-                : "Une erreur s'est produite lors de l'inscription",
+              result.message ||
+              "Une erreur s'est produite lors de l'inscription",
             icon: "error",
             button: "Fermer",
           }).then(() => {
@@ -210,4 +257,26 @@ window.addEventListener("DOMContentLoaded", () => {
         );
       }
     });
+
+  const renderProfile = (profile) => {
+    profileContainer.innerHTML = "";
+    const profileCard = `
+    <div
+              class="rounded-full bg-gray-200 w-24 h-24 mx-auto mb-4 flex items-center justify-center"
+            >
+              <i class="fas fa-user text-gray-600 text-5xl"></i>
+            </div>
+            
+    <h3 class="text-lg font-semibold text-center">${profile.user.firstname} ${profile.user.lastname}</h3>
+            <p class="text-gray-500 text-center">${profile.job}</p>
+            <p class="text-gray-500 text-center mb-4">
+              ${profile.description}
+            </p>
+            
+            <div class="text-center mb-4">
+              <p class="text-gray-700">Tel: ${profile.user.phoneNumber}</p>
+            </div>
+            `;
+    profileContainer.insertAdjacentHTML("beforeend", profileCard);
+  };
 });

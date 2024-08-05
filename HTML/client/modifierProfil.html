@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modification du profil Artisant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="shortcut icon"
+      href="./../../image/logo.webp"
+      type="image/x-icon"
+    />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+
+  <style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: darkorange;
+    }
+
+    .profile-container {
+      position: relative;
+      display: inline-block;
+    }
+    .profile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ddd;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .profile-container:hover .profile-menu {
+      display: block;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+
+  <body class="bg-gray-100">
+    <section class="bg-white shadow">
+      <header
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="flex items-center">
+          <a href="./profil.html">
+            <img src="./../../image/logo.webp" alt="Logo" class="h-10" />
+          </a>
+        </div>
+        <div class="relative">
+          <div class="flex items-center cursor-pointer group">
+            <i class="fas fa-user text-2xl text-gray-700"></i>
+            <div
+              class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <button
+                id="logout"
+                class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >
+                Déconnexion
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+
+    <div class="container mx-auto p-4">
+      <div class="container mx-auto py-4">
+        <a
+          href="./../client/profil.html"
+          class="flex items-center text-orange-500 hover:text-orange-700"
+        >
+          <i class="fas fa-arrow-left mr-2"></i>
+          Retour
+        </a>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-4" id="profile-container">
+        <div
+          class="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
+        >
+          <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+            Modification de profil Artisant
+          </h2>
+          <form
+            id="registerForm"
+            class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md dark:bg-gray-800"
+          >
+            <!-- Information Personnelle -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-4">
+                Information Personnelle
+              </h3>
+              <div class="grid gap-6 mb-6 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="firstname"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Prénom</label
+                  >
+                  <input
+                    type="text"
+                    name="firstname"
+                    id="firstname"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="John"
+                  />
+                  <span id="firstnameError" class="text-red-500 hidden"></span>
+                </div>
+                <div>
+                  <label
+                    for="lastname"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Nom</label
+                  >
+                  <input
+                    type="text"
+                    name="lastname"
+                    id="lastname"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Doe"
+                  />
+                  <span id="lastnameError" class="text-red-500 hidden"></span>
+                </div>
+
+                <div class="mb-6">
+                  <label
+                    for="phoneNumber"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Numéro de téléphone</label
+                  >
+                  <input
+                    type="text"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    placeholder="+2250102030405"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                  <span id="phoneError" class="text-red-500 hidden"></span>
+                </div>
+                <div class="relative">
+                  <label
+                    for="passwordArtisant"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Mot de passe</label
+                  >
+                  <input
+                    type="password"
+                    name="passwordArtisant"
+                    id="passwordArtisant"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 pr-10"
+                    placeholder="Mot de passe"
+                  />
+                  <button
+                    type="button"
+                    id="togglePassword"
+                    class="absolute mt-4 inset-y-0 right-0 flex items-center px-3 py-2 text-gray-600 hover:text-gray-800"
+                  >
+                    <i data-lucide="eye"></i>
+                  </button>
+                  <span id="passwordError" class="text-red-500 hidden"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Infos Entreprise -->
+            <div class="mb-6">
+              <h3 class="text-lg font-semibold mb-4">Infos Entreprise</h3>
+              <div class="grid gap-6 mb-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div>
+                  <label
+                    for="job"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Job</label
+                  >
+                  <input
+                    type="text"
+                    name="job"
+                    id="job"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Job"
+                  />
+                  <div id="jobError" class="text-red-500 hidden"></div>
+                </div>
+                <div>
+                  <label
+                    for="categoryId"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Catégorie</label
+                  >
+                  <select
+                    id="categoryId"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  >
+                    <option value="">Choisissez une catégorie</option>
+                    <option value="1">Agroalimentaire, Restauration</option>
+                    <option value="2">Construction et Batiment</option>
+                    <option value="3">Mecaniquee, Electronique</option>
+                    <option value="4">Mobilier et Ameublement</option>
+                    <option value="5">Textile, Habillement</option>
+                    <option value="6">Audiovisuel, Communication</option>
+                    <option value="7">Hygiène et soins corporels</option>
+                    <option value="8">Art et decoration</option>
+                  </select>
+                  <span id="categoryError" class="text-red-500 hidden"></span>
+                </div>
+                <div>
+                  <label
+                    for="lat"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Latitude</label
+                  >
+                  <input
+                    type="text"
+                    id="lat"
+                    name="lat"
+                    placeholder="Latitude"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="long"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Longitude</label
+                  >
+                  <input
+                    type="text"
+                    id="long"
+                    name="long"
+                    placeholder="Longitude"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="description"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Description</label
+                  >
+                  <textarea
+                    id="description"
+                    rows="4"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+                    placeholder="Description"
+                  ></textarea>
+                </div>
+                <div class="w-full">
+                  <label
+                    for="getLocation"
+                    class="block text-sm font-medium text-gray-900 dark:text-white"
+                    >Localisation</label
+                  >
+                  <div class="flex items-center space-x-4">
+                    <button
+                      type="button"
+                      id="getLocation"
+                      class="bg-green-600 text-white rounded-lg px-4 py-2"
+                    >
+                      Obtenir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+              <button
+                type="submit"
+                class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              >
+                Modifier
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="w-full lg:w-1/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
+        >
+          <div
+            class="bg-white rounded-lg shadow p-4 relative"
+            id="profile"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="bg-white mt-4">
+      <footer
+        class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
+      >
+        <div
+          class="container flex flex-col justify-between py-8 mx-auto space-y-6 lg:flex-row lg:space-y-0"
+        >
+          <div class="lg:w-1/4 flex flex-col items-center lg:items-start">
+            <a rel="noopener noreferrer" href="#" class="flex justify-center">
+              <img src="../../image/logo.webp" class="w-22 h-20" alt="Logo" />
+            </a>
+            <div class="flex justify-center space-x-4 mt-4 ml-4">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="Facebook"
+                class="text-blue-600"
+              >
+                <i class="fab fa-facebook-f fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="Instagram"
+                class="text-pink-600"
+              >
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="TikTok"
+                class="text-black"
+              >
+                <i class="fab fa-tiktok fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                title="WhatsApp"
+                class="text-green-500"
+              >
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 text-sm gap-x-3 gap-y-6 lg:w-3/4 sm:grid-cols-3"
+          >
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                Categories
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Agroalimentaire, Restauration</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Construction et Bâtiment</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mécanique, Électronique</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mobilier et Ameublement</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Textile, Habillement</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Audiovisuel, Communication</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Hygiène et soins corporels</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Art et décoration</a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                TicBooster
+              </h3>
+              <ul class="space-y-1">
+                <li><a rel="noopener noreferrer" href="#">Nos valeurs</a></li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Devenir vendeur</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Devenir client</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >A propos de TICBOOSTER</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="uppercase dark:text-gray-900 font-bold">
+                Statistiques
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">10 000 vendeurs</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >27 000 commandes en cours</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >15 000 000 commandes effectuées</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="py-4 text-sm text-center border-t border-gray-200">
+          <p class="mt-2">Copyright TICBOOSTER 2024</p>
+        </div>
+      </footer>
+    </section>
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          var menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script
+      type="module"
+      src="./../../JS/Vendeur/modifierProfilArtisant.js"
+    ></script>
+  </body>
+</html>
