@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const sellButton = document.querySelector(".sell-button");
   const buyButton = document.querySelector(".buy-button");
   const profileIcon = document.getElementById("profile-icon");
-  const profileName = document.getElementById("profile-name");
-  const profileEmail = document.getElementById("profile-email");
-  const profilePhone = document.getElementById("profile-phone");
-  const profileType = document.getElementById("profile-type");
+  const profileName = document.getElementById("firstname");
+  const profileEmail = document.getElementById("email");
+  const profilePhone = document.getElementById("phoneNumber");
+  const profile = document.getElementById("profile");
 
   checkValidToken(token);
   if (token) {
@@ -67,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (profileName) profileName.textContent = `${firstname} ${lastname}`;
         if (profileEmail) profileEmail.textContent = email;
         if (profilePhone) profilePhone.textContent = phoneNumber;
-        if (profileType)
-          profileType.textContent = type === "customer" ? "Client" : "Vendeur";
       }
     } catch (error) {
       console.log(error);

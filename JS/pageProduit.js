@@ -1,23 +1,16 @@
-import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./script.js";
+import {
+  BASE_URL_API_DEV,
+  BASE_URL_LINK_DEV,
+  checkValidToken,
+} from "./script.js";
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
   const servicesContainer = document.getElementById("services");
   const searchInput = document.getElementById("search-input");
 
   const profile = document.getElementById("profile");
-  const sellButton = document.querySelector(".sell-button");
-  const buyButton = document.querySelector(".buy-button");
-  const profileIcon = document.getElementById("profile-icon");
 
-  if (token) {
-    if (profileIcon) profileIcon.classList.remove("hidden");
-    if (sellButton) sellButton.classList.add("hidden");
-    if (buyButton) buyButton.classList.add("hidden");
-  } else {
-    window.location.href =
-      "https://coudacode.github.io/TicBooster/HTML/login.html";
-    `${BASE_URL_LINK_DEV}/HTML/login.html`;
-  }
+  checkValidToken(token);
 
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {

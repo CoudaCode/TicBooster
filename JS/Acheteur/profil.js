@@ -12,7 +12,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const profileEmail = document.getElementById("profile-email");
   const profilePhone = document.getElementById("profile-phone");
   const profileType = document.getElementById("profile-type");
-
   if (token) {
     if (profileIcon) profileIcon.classList.remove("hidden");
     if (sellButton) sellButton.classList.add("hidden");
