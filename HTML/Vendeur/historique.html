@@ -91,8 +91,7 @@
                 <span
                   id="profile"
                   class="ml-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >John Doe</span
-                >
+                ></span>
                 <svg
                   class="w-4 h-4 ml-1 text-gray-400"
                   fill="currentColor"
@@ -107,7 +106,7 @@
               </button>
               <div
                 id="userMenu"
-                class="absolute right-0 mt-2 w-48 bg-white border mt-32 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute right-0 mt-2 w-48 bg-white border mt-28 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
                 <a
                   href="./historique.html"
@@ -214,7 +213,18 @@
         <div
           class="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
         >
-          <h2 class="text-2xl font-semibold mb-4">Achats Récents</h2>
+          <div
+            class="bg-gray-50 p-4 rounded-lg shadow-md flex items-center justify-between"
+          >
+            <h2 class="text-2xl font-semibold mb-4">Achats Récents</h2>
+            <div class="flex justify-end">
+              <a href="./../page_produit.html">
+                <button class="bg-green-500 text-white px-4 py-2 rounded-md">
+                  Ajouter un achat
+                </button>
+              </a>
+            </div>
+          </div>
           <div class="space-y-4 flex-grow" id="commande-en-cours"></div>
         </div>
       </div>
@@ -260,7 +270,7 @@
               </a>
               <a
                 rel="noopener noreferrer"
-                href="h ttps://whatsapp.com/channel/0029VakFkE97IUYXZAJLRQ3G
+                href="https://whatsapp.com/channel/0029VakFkE97IUYXZAJLRQ3G
                 "
                 title="WhatsApp"
                 class="text-green-500"

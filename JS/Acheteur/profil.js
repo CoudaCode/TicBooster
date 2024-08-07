@@ -86,6 +86,8 @@ window.addEventListener("DOMContentLoaded", function () {
           <div class="flex-grow">
             <p class="text-lg font-semibold">Aucune commande en cours</p>
           </div>
+
+          
         </div>
       `;
       ordersContainer.insertAdjacentHTML("beforeend", noOrdersCard);
