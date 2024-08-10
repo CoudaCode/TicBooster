@@ -208,7 +208,7 @@ window.addEventListener("DOMContentLoaded", function () {
           text: "L'artisant vous informe que votre commande a été validée et sera traitée prochainement.",
           icon: "success",
         }).then(() => {
-          window.location.href = `${BASE_URL_LINK_DEV}HTML/Vendeur/historique.html`;
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/Vendeur/historique.html`;
         });
       } else {
         swal({

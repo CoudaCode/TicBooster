@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const servicesContainer = document.getElementById("services");
   const profile = document.getElementById("profile");
   checkValidToken(token);
-
   const logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", function () {
@@ -202,7 +201,7 @@ window.addEventListener("DOMContentLoaded", function () {
           icon: "success",
           button: "OK",
         }).then(() => {
-          window.location.href = `${BASE_URL_LINK_DEV}/HTML/page_produit.html`;
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/Vendeur/historique.html`;
         });
       } else {
         swal({
