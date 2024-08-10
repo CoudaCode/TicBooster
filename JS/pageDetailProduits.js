@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
   const servicesContainer = document.getElementById("services");
   const profile = document.getElementById("profile");
-
   checkValidToken(token);
 
   const logoutButton = document.getElementById("logout");
