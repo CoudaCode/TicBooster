@@ -1,8 +1,4 @@
-import {
-  BASE_URL_API_DEV,
-  BASE_URL_LINK_DEV,
-  checkValidTokenArtisant,
-} from "./../script.js";
+import { BASE_URL_API_DEV, checkValidTokenArtisant } from "./../script.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   const logout = document.getElementById("logout");
@@ -38,13 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
      <div class="w-full sm:w-1/2 lg:w-1/3 p-2">
         <div class="bg-white rounded-lg shadow p-4 mb-4 relative">
           <div class="absolute top-2 right-2 flex space-x-2">
-            <a href="${BASE_URL_LINK_DEV}/HTML/client/creationProduit/modifierService.html?id=${
-        commande.id
-      }">
-              <button class="text-gray-500 hover:text-blue-500">
-                <i class="fa-regular fa-pen-to-square"></i>
-              </button>
-            </a>
+           
             <button class="text-gray-500 hover:text-red-500 btn-delete" data-id="${
               commande.id
             }">
@@ -70,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
             <h4 class="text-md font-semibold mb-2">Informations du client</h4>
             <p><strong>Prénom:</strong> ${commande.user.firstname}</p>
             <p><strong>Nom:</strong> ${commande.user.lastname}</p>
-            <p><strong>Téléphone:</strong> ${commande.user.tel}</p>
+            <p><strong>Téléphone:</strong> ${commande.user.phoneNumber}</p>
             <p><strong>Date de commande:</strong> ${new Date(
               commande.date
             ).toLocaleDateString("fr-FR")}</p>
@@ -94,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
           `;
       commandesContainer.insertAdjacentHTML("beforeend", commandeCard);
     });
-    attachDeleteEvents(); // Attach delete events after rendering the commandes
+    attachDeleteEvents();
   };
 
   const attachDeleteEvents = () => {

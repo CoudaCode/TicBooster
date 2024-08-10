@@ -1,16 +1,20 @@
 import { BASE_URL_API_DEV, BASE_URL_LINK_DEV } from "./script.js";
 window.addEventListener("DOMContentLoaded", function () {
-  let allServices = [];
-  const servicesContainer = document.getElementById("services"); // Assurez-vous que cet élément existe
+  let allArtisant = [];
+  const artisantContainer = document.getElementById("services"); // Assurez-vous que cet élément existe
 
   const fetchServices = async () => {
     try {
-      const response = await window.fetch(`${BASE_URL_API_DEV}/service/`, {});
+      const response = await window.fetch(
+        `${BASE_URL_API_DEV}/artisant/all`,
+        {}
+      );
       const result = await response.json();
 
       if (response.ok) {
-        allServices = result.data;
-        renderServices(allServices);
+        console.log(result);
+        allArtisant = result.data;
+        renderArtisant(allArtisant);
       } else {
         console.error(result.message);
       }
@@ -19,14 +23,15 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  const renderServices = (services) => {
-    servicesContainer.innerHTML = ""; // Clear previous services
-    services.forEach((service) => {
+  const renderArtisant = (artisant) => {
+    artisantContainer.innerHTML = ""; // Clear previous artisant
+
+    artisant.forEach((artisant) => {
       const serviceCard = `
-       <div class="bg-white shadow-md rounded-lg p-4 mb-4" data-service-id="${service.id}">
+       <div class="bg-white shadow-md rounded-lg p-4 mb-4" data-service-id="${artisant.id}">
   <div class="mt-4">
     <div class="flex justify-between mb-2">
-      <h2 class="text-gray-800 font-semibold">${service.name}</h2>
+      <h2 class="text-gray-800 font-semibold">${artisant.user.firstname} ${artisant.user.lastname}</h2>
       <div class="flex">
         <i class="fas fa-star text-yellow-500"></i>
         <i class="fas fa-star text-yellow-500"></i>
@@ -38,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
     <div class="flex items-center mt-4 justify-between">
       <div class="flex items-center">
         <div class="ml-2 flex flex-col max-w-full">
-          <p class="text-gray-600 text-sm overflow-hidden overflow-ellipsis">${service.description}</p>
+          <p class="text-gray-600 text-sm overflow-hidden overflow-ellipsis">${artisant.job}</p>
         </div>
       </div>
     </div>
@@ -48,16 +53,14 @@ window.addEventListener("DOMContentLoaded", function () {
           <i class="fas fa-user-circle text-black text-3xl mr-2"></i>
         </div>
         <div class="ml-2">
-          <span class="text-sm">${service.artisant.user.firstname} ${service.artisant.user.lastname}</span>
-          <p class="text-xs text-gray-500">${service.artisant.job}</p>
+          Ville : Abidjan
         </div>
       </div>
-      <p class="text-lg font-semibold">${service.price} FCFA</p>
     </div>
   </div>
 </div>
 `;
-      servicesContainer.insertAdjacentHTML("beforeend", serviceCard);
+      artisantContainer.insertAdjacentHTML("beforeend", serviceCard);
     });
 
     // Add click event listener to all service cards

@@ -80,7 +80,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const renderProfile = (profile) => {
     profileContainer.innerHTML = "";
+
+    console.log("profile==>", profile);
     const profileCard = `
+
+    
      <div class="bg-white rounded-lg shadow p-4 relative">
             <div class="rounded-full bg-gray-200 w-24 h-24 mx-auto mb-4">
               <!-- Placeholder for image -->
@@ -92,7 +96,7 @@ window.addEventListener("DOMContentLoaded", () => {
             </p>
             
             <div class="text-center mb-4">
-              <p class="text-gray-700">Tel: ${profile.user.phoneNumber}</p>
+              <p class="text-gray-700">Tel: ${profile.phoneNumber}</p>
             </div>
             <div class="text-center">
               <button class="text-gray-700 py-2 px-4 rounded mr-2">

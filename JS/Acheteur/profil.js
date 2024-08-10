@@ -77,57 +77,87 @@ window.addEventListener("DOMContentLoaded", function () {
   const renderOrders = (orders) => {
     ordersContainer.innerHTML = "";
 
-    // Vérifiez s'il n'y a aucune commande en attente
+    // Filtrer les commandes par statut
     const pendingOrders = orders.filter((order) => order.status === "pending");
+    const paidOrders = orders.filter((order) => order.status === "paid");
 
-    if (pendingOrders.length === 0) {
+    // Afficher un message si aucune commande n'est trouvée
+    if (pendingOrders.length === 0 && paidOrders.length === 0) {
       const noOrdersCard = `
         <div class="bg-gray-50 p-4 rounded-lg shadow-md flex items-center justify-center">
           <div class="flex-grow">
             <p class="text-lg font-semibold">Aucune commande en cours</p>
           </div>
-
-          
         </div>
       `;
       ordersContainer.insertAdjacentHTML("beforeend", noOrdersCard);
-      return; // Arrêtez l'exécution de la fonction
+      return;
     }
 
-    // Si des commandes en attente existent, affichez-les
-    pendingOrders.forEach((order) => {
-      console.log("order", order);
-      const orderCard = `
-        <div class="bg-gray-50 p-4 rounded-lg shadow-md">
-          <div class="flex items-center">
-            <div class="flex-grow">
-              <h3 class="text-lg font-semibold">${order.services.name}</h3>
-              <p class="text-sm text-gray-500">Vendeur: ${
-                order.artisant.user.firstname
-              } ${order.artisant.user.lastname}</p>
-              <p class="text-sm text-gray-500">Date d'achat: ${new Date(
-                order.date
-              ).toLocaleDateString()}</p>
-              <p class="text-sm text-gray-500">Statut: ${
-                order.status === "pending" ? "En cours de traitement" : "Traité"
-              }</p>
-              <p class="text-lg font-semibold mt-2">Prix Total: ${
-                order.totalPrice
-              } FCFA</p>
-              <p class="text-lg font-semibold mt-2">Quantité: ${
-                order.quantity
-              }</p>
-              <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/confirmation.html?id=${
-        order.id
-      }">
-              <button class="bg-green-500 text-white px-4 py-2 rounded-md" >Valider la commande</button>
-              </a>
+    // Affichage des commandes en attente de paiement
+    if (pendingOrders.length > 0) {
+      pendingOrders.forEach((order) => {
+        const pendingOrderCard = `
+          <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+            <div class="flex items-center">
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold">${order.services.name}</h3>
+                <p class="text-sm text-gray-500">Vendeur: ${
+                  order.artisant.user.firstname
+                } ${order.artisant.user.lastname}</p>
+                <p class="text-sm text-gray-500">Date d'achat: ${new Date(
+                  order.date
+                ).toLocaleDateString()}</p>
+                <p class="text-sm text-gray-500">Statut: En attente de paiement</p>
+                <p class="text-lg font-semibold mt-2">Prix Total: ${
+                  order.totalPrice
+                } FCFA</p>
+                <p class="text-lg font-semibold mt-2">Quantité: ${
+                  order.quantity
+                }</p>
+
+                <a href="${BASE_URL_LINK_DEV}/HTML/Vendeur/confirmation.html?id=${
+          order.id
+        }">
+                  <button class="bg-green-500 text-white px-4 py-2 rounded-md">Valider la commande</button>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      `;
-      ordersContainer.insertAdjacentHTML("beforeend", orderCard);
-    });
+        `;
+        ordersContainer.insertAdjacentHTML("beforeend", pendingOrderCard);
+      });
+    }
+
+    // Affichage des commandes payées
+    if (paidOrders.length > 0) {
+      paidOrders.forEach((order) => {
+        const paidOrderCard = `
+          <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+            <div class="flex items-center">
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold">${order.services.name}</h3>
+                <p class="text-sm text-gray-500">Vendeur: ${
+                  order.artisant.user.firstname
+                } ${order.artisant.user.lastname}</p>
+                <p class="text-sm text-gray-500">Date d'achat: ${new Date(
+                  order.date
+                ).toLocaleDateString()}</p>
+                <p class="text-sm text-gray-500">Statut: En cours de traitement</p>
+                <p class="text-lg font-semibold mt-2">Prix Total: ${
+                  order.totalPrice
+                } FCFA</p>
+                <p class="text-lg font-semibold mt-2">Quantité: ${
+                  order.quantity
+                }</p>
+                
+              </div>
+            </div>
+          </div>
+        `;
+        ordersContainer.insertAdjacentHTML("beforeend", paidOrderCard);
+      });
+    }
   };
 
   const fetchOrders = async (id) => {

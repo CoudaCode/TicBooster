@@ -111,7 +111,7 @@
                 <a
                   href="./historique.html"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >Profile</a
+                  >Historique</a
                 >
                 <a
                   href="./../client/incription.html"
@@ -172,8 +172,36 @@
 
       <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Informations sur le service (à gauche) -->
-        <div class="bg-white p-6 rounded-lg shadow-md" id="service-details">
+        <div class="bg-white p-6 rounded-lg shadow-md">
           <h2 class="text-xl font-semibold mb-4">Validation de la commande</h2>
+          <div id="service-details">
+            <div class="mb-4">
+              <h3 class="text-lg font-medium">Détails de l'artisan</h3>
+              <p><strong>Nom:</strong> Patience Lawrence</p>
+              <p>
+                <strong>Téléphone:</strong> +2250102030407
+                <span>
+                  <a href="tel:+2250102030407"><i class="fas fa-phone"></i> </a>
+
+                  <a href="https://wa.me/+2250102030407">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </span>
+              </p>
+              <p><strong>Métier:</strong> Electricité</p>
+              <p><strong>Description:</strong> Quod est reiciendis</p>
+            </div>
+
+            <div class="mb-4">
+              <h3 class="text-lg font-medium">Détails du service</h3>
+              <p><strong>Nom:</strong> Addison Shepard</p>
+              <p><strong>Description:</strong> Sed do dolorem est q</p>
+              <p><strong>Durée:</strong> Aliquip et fuga Ut</p>
+              <p><strong>Prix unitaire:</strong> 253 FCFA</p>
+              <p><strong>Quantité:</strong> 1</p>
+              <p><strong>Prix total:</strong> 253 FCFA</p>
+            </div>
+          </div>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md">
@@ -182,7 +210,10 @@
           <!-- Premier produit -->
           <div class="flex justify-between items-center mb-4">
             <div class="flex items-center space-x-4">
-              <div class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-1">
+              <div
+                class="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-1"
+                id="payment-details"
+              >
                 <div class="w-full">
                   <label
                     for=""
@@ -208,7 +239,7 @@
                   <label
                     for="phoneNumber"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Numéro de téléphone</label
+                    >Numéro de téléphone du paiement</label
                   >
                   <input
                     type="text"
@@ -224,18 +255,21 @@
                 </div>
                 <div class="w-full">
                   <label
-                    for="lastname"
+                    for="livraison"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Prénom</label
+                    >Lieu de livraison</label
                   >
                   <input
                     type="text"
-                    name="lastname"
-                    id="lastname"
+                    name="livraisonCity"
+                    id="livraisonCity"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-                    placeholder="Prénom"
+                    placeholder="Abobo pk 18"
                   />
-                  <span id="lastnameError" class="text-red-500 hidden"></span>
+                  <span
+                    id="livraisonCityError"
+                    class="text-red-500 hidden"
+                  ></span>
                 </div>
               </div>
             </div>
@@ -245,6 +279,9 @@
           <div class="flex justify-between items-center">
             <p class="font-medium text-lg">Montant Total</p>
             <p class="text-lg font-semibold" id="total">60000 fcfa</p>
+          </div>
+          <div class="flex justify-end mt-4">
+            <p>Livraison Gratuite</p>
           </div>
           <div class="flex justify-end mt-4">
             <button
@@ -371,7 +408,7 @@
                   >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#"
+                  <a rel="noopener noreferrer" href="./../about.html"
                     >A propos de TICBOOSTER</a
                   >
                 </li>
@@ -424,7 +461,7 @@
           }
         });
     </script>
-    <script type="module" src="./../../JS/panier/panier.js"></script>
+    <script type="module" src="./../../JS/Vendeur/Confirmation.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>

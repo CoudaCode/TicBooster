@@ -138,39 +138,83 @@
                   <label
                     for="job"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Job</label
-                  >
-                  <input
-                    type="text"
-                    name="job"
-                    id="job"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-                    placeholder="Job"
-                  />
-                  <div id="jobError" class="text-red-500 hidden"></div>
-                </div>
-                <div>
-                  <label
-                    for="categoryId"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >Catégorie</label
+                    >Métier</label
                   >
                   <select
-                    id="categoryId"
+                    id="job"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
                   >
-                    <option value="">Choisissez une catégorie</option>
-                    <option value="1">Agroalimentaire, Restauration</option>
-                    <option value="2">Construction et Batiment</option>
-                    <option value="3">Mecaniquee, Electronique</option>
-                    <option value="4">Mobilier et Ameublement</option>
-                    <option value="5">Textile, Habillement</option>
-                    <option value="6">Audiovisuel, Communication</option>
-                    <option value="7">Hygiène et soins corporels</option>
-                    <option value="8">Art et decoration</option>
+                    <option>Choisissez...</option>
+                    <optgroup label="Agroalimentaire et Restauration">
+                      <option value="agroalimentaire">Agroalimentaire</option>
+                      <option value="alimentation">Alimentation</option>
+                      <option value="restauration">Restauration</option>
+                    </optgroup>
+
+                    <!-- Catégorie 2 -->
+                    <optgroup label="Construction et Extraction">
+                      <option value="mines carrieres">
+                        Mines et Carrières
+                      </option>
+                      <option value="construction batiment">
+                        Construction et Bâtiment
+                      </option>
+                    </optgroup>
+
+                    <!-- Catégorie 3 -->
+                    <optgroup label="Métaux et Électricité">
+                      <option value="metaux">Métaux</option>
+                      <option value="constructions metalliques">
+                        Constructions Métalliques
+                      </option>
+                      <option value="mecanique">Mécanique</option>
+                      <option value="electromecanique">Électromécanique</option>
+                      <option value="electricite">Électricité</option>
+                      <option value="electronique">Électronique</option>
+                      <option value="petites activites transport">
+                        Petites Activités de Transport
+                      </option>
+                    </optgroup>
+
+                    <!-- Catégorie 4 -->
+                    <optgroup label="Bois et Mobilier">
+                      <option value="bois assimiles">Bois et Assimilés</option>
+                      <option value="mobilier ameublement">
+                        Mobilier et Ameublement
+                      </option>
+                    </optgroup>
+
+                    <!-- Catégorie 5 -->
+                    <optgroup label="Textile et Habillement">
+                      <option value="textile">Textile</option>
+                      <option value="habillement">Habillement</option>
+                      <option value="cuirs peaux">Cuirs et Peaux</option>
+                    </optgroup>
+
+                    <!-- Catégorie 6 -->
+                    <optgroup label="Audiovisuel et Communication">
+                      <option value="audiovisuel">Audiovisuel</option>
+                      <option value="communication">Communication</option>
+                    </optgroup>
+
+                    <!-- Catégorie 7 -->
+                    <optgroup label="Hygiène et Soins">
+                      <option value="hygiene">Hygiène</option>
+                      <option value="soins corporels">Soins Corporels</option>
+                    </optgroup>
+
+                    <!-- Catégorie 8 -->
+                    <optgroup label="Artisanat">
+                      <option value="artisanat art">Artisanat d’Art</option>
+                      <option value="artisanat decoration">
+                        Artisanat de Décoration
+                      </option>
+                    </optgroup>
+                    <option value="Autre">Autre</option>
                   </select>
-                  <span id="categoryError" class="text-red-500 hidden"></span>
+                  <span id="jobError" class="text-red-500 hidden"></span>
                 </div>
+
                 <div>
                   <label
                     for="lat"

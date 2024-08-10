@@ -1,4 +1,8 @@
-import { BASE_URL_API_DEV, checkValidToken } from "./script.js";
+import {
+  BASE_URL_API_DEV,
+  BASE_URL_LINK_DEV,
+  checkValidToken,
+} from "./script.js";
 
 window.addEventListener("DOMContentLoaded", function () {
   const token = localStorage.getItem("accessToken");
@@ -124,7 +128,7 @@ window.addEventListener("DOMContentLoaded", function () {
                   <span id="total-amount" class="title-font font-medium text-2xl text-gray-900">Total: ${service.price} FCFA</span>
                 </div>
                 <button class="flex ml-auto text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded" id="order-button">
-                  Commander
+                  Ajouter au panier
                 </button>
               </div>
             </div>
@@ -132,6 +136,18 @@ window.addEventListener("DOMContentLoaded", function () {
         </section>
       `;
       setupQuantityControl(service.price);
+
+      const orderButton = document.getElementById("order-button");
+      if (orderButton) {
+        orderButton.addEventListener("click", () => {
+          const quantity = parseInt(
+            document.getElementById("quantity").value,
+            10
+          );
+          const totalPrice = quantity * service.price;
+          addToCart(service.id, totalPrice, quantity);
+        });
+      }
     }
   }
 
@@ -161,4 +177,47 @@ window.addEventListener("DOMContentLoaded", function () {
 
     quantityInput.addEventListener("input", updateTotal);
   }
+
+  const addToCart = async (id, totalPrice, quantity) => {
+    try {
+      const data = {
+        serviceId: id,
+        totalPrice,
+        quantity,
+        date: new Date().toISOString(),
+        status: "pending",
+      };
+      const response = await fetch(`${BASE_URL_API_DEV}/order`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      console.log("result", result);
+      if (result.status === "success") {
+        swal({
+          text: "Commande ajoutée au panier !",
+          icon: "success",
+          button: "OK",
+        }).then(() => {
+          window.location.href = `${BASE_URL_LINK_DEV}/HTML/page_produit.html`;
+        });
+      } else {
+        swal({
+          text: result.message,
+          icon: "error",
+          button: "OK",
+        });
+      }
+    } catch (error) {
+      swal({
+        text: error.message,
+        icon: "error",
+        button: "OK",
+      });
+    }
+  };
 });

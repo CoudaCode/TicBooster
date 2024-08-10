@@ -3,69 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historique et Profil</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <title>A propos de TICBOOSTER</title>
+    <link rel="stylesheet" href="./../../CSS/style.css" />
+
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
 
-    <link
-      rel="shortcut icon"
-      href="./../../image/logo.webp"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./../image/logo.webp" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
-
-  <style>
-    .custom-button {
-      background-color: orange;
-      color: black;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .custom-button:hover {
-      background-color: darkorange;
-    }
-
-    .profile-container {
-      position: relative;
-      display: inline-block;
-    }
-    .profile-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background-color: white;
-      border: 1px solid #ddd;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      padding: 10px;
-      border-radius: 4px;
-    }
-    .profile-container:hover .profile-menu {
-      display: block;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
-
   <body class="bg-gray-100">
     <header class="bg-white shadow-md">
       <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
           <div class="flex-1 md:flex md:items-center md:gap-12">
-            <a class="block text-teal-600" href="./../page_produit.html">
+            <a class="block text-teal-600" href="./page_produit.html">
               <img
-                src="./../../image/logo.webp"
+                src="./../image/logo.webp"
                 class="mr-3 h-6 sm:h-12"
                 alt="Logo"
               />
@@ -85,7 +42,7 @@
               </div>
             </nav>
 
-            <div class="relative flex items-center gap-4 group">
+            <div class="relative flex items-center gap-4 group z-index-100">
               <button class="flex items-center text-sm focus:outline-none">
                 <i class="fas fa-user-circle text-2xl"></i>
                 <span
@@ -106,15 +63,15 @@
               </button>
               <div
                 id="userMenu"
-                class="absolute right-0 mt-2 w-48 bg-white border mt-28 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                class="absolute right-0 mt-2 w-48 bg-white border mt-32 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
                 <a
-                  href="./historique.html"
+                  href="./../HTML/Vendeur/historique.html"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >Historique</a
                 >
                 <a
-                  href="./../client/incription.html"
+                  href="./../HTML/client/incription.html"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >Devenir Artisant</a
                 >
@@ -152,84 +109,59 @@
         </div>
       </div>
     </header>
-
-    <div
-      id="mobileSearchContainer"
-      class="lg:hidden hidden justify-between items-center w-full"
-    >
-      <input
-        type="text"
-        id="search-mobile"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 transform -translate-y-full transition-transform duration-300"
-        placeholder="Rechercher..."
-        required
-      />
-    </div>
-    <div class="container mx-auto p-4">
-      <div class="flex flex-col lg:flex-row gap-4" id="profile-container">
-        <!-- Profile Section -->
-        <div
-          class="w-full lg:w-1/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
-        >
-          <div class="bg-white rounded-lg shadow p-4 relative">
-            <!-- User Profile Picture -->
-            <div
-              class="rounded-full bg-gray-200 w-24 h-24 mx-auto mb-4 flex items-center justify-center"
+    <div class="mt-4 max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <div id="about" class="relative bg-white overflow-hidden mt-16">
+        <div class="max-w-7xl mx-auto">
+          <div
+            class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
+          >
+            <svg
+              class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2"
+              fill="currentColor"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              aria-hidden="true"
             >
-              <i class="fas fa-user text-gray-600 text-5xl"></i>
-            </div>
+              <polygon points="50,0 100,0 50,100 0,100"></polygon>
+            </svg>
 
-            <!-- User Information -->
-            <h3
-              class="text-xl font-semibold text-center text-gray-800 mb-2"
-              id="profile-name"
-            ></h3>
-            <p class="text-center text-gray-600 mb-2" id="profile-type"></p>
-            <p class="text-center text-gray-500 mb-4" id="profile-email"></p>
-            <p class="text-center text-gray-500 mb-4" id="profile-phone"></p>
+            <div class="pt-1"></div>
 
-            <!-- Action Buttons -->
-            <div class="text-center">
-              <a href="./profil.html">
-                <button
-                  class="text-gray-700 py-2 px-4 rounded border border-gray-300 mr-2 hover:bg-gray-100"
+            <main
+              class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28"
+            >
+              <div class="sm:text-center lg:text-left">
+                <h2
+                  class="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl"
                 >
-                  Modifier
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="flex justify-center mt-4">
-            <a href="./../page_produit.html">
-              <i
-                data-lucide="circle-arrow-left"
-                class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-              ></i>
-            </a>
+                  A propos de TICBOOSTER
+                </h2>
+
+                <p>
+                  Donec porttitor, enim ut dapibus lobortis, lectus sem
+                  tincidunt dui, eget ornare lectus ex non libero. Nam rhoncus
+                  diam ultrices porttitor laoreet. Ut mollis fermentum ex, vel
+                  viverra lorem volutpat sodales. In ornare porttitor odio sit
+                  amet laoreet. Sed laoreet, nulla a posuere ultrices, purus
+                  nulla tristique turpis, hendrerit rutrum augue quam ut est.
+                  Fusce malesuada posuere libero, vitae dapibus eros facilisis
+                  euismod. Sed sed lobortis justo, ut tincidunt velit. Mauris in
+                  maximus eros.
+                </p>
+              </div>
+            </main>
           </div>
         </div>
-
-        <!-- Recent Purchases Section -->
-        <div
-          class="w-full lg:w-3/4 p-4 bg-white shadow-lg rounded-lg flex flex-col"
-        >
-          <div
-            class="bg-gray-50 p-4 rounded-lg shadow-md flex items-center justify-between"
-          >
-            <h2 class="text-2xl font-semibold mb-4">Achats Récents</h2>
-            <div class="flex justify-end">
-              <a href="./../page_produit.html">
-                <button class="bg-green-500 text-white px-4 py-2 rounded-md">
-                  Ajouter un achat
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="space-y-4 flex-grow" id="commande-en-cours"></div>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+          <img
+            class="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full"
+            src="./../image/login-vendeur.jpg"
+            alt=""
+          />
         </div>
       </div>
     </div>
-
+    <!-- footer -->
     <section class="bg-white mt-4">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
@@ -239,7 +171,7 @@
         >
           <div class="lg:w-1/4 flex flex-col items-center lg:items-start">
             <a rel="noopener noreferrer" href="#" class="flex justify-center">
-              <img src="./../../image/logo.webp" class="w-22 h-20" alt="Logo" />
+              <img src="./../image/logo.webp" class="w-22 h-20" alt="Logo" />
             </a>
             <div class="flex justify-center space-x-4 mt-4 ml-4">
               <a
@@ -332,17 +264,19 @@
               <ul class="space-y-1">
                 <li><a rel="noopener noreferrer" href="#">Nos valeurs</a></li>
                 <li>
-                  <a rel="noopener noreferrer" href="./../client/connexion.html"
+                  <a
+                    rel="noopener noreferrer"
+                    href="./../HTML/client/connexion.html"
                     >Devenir vendeur</a
                   >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="./../login.html"
+                  <a rel="noopener noreferrer" href="./../HTML/login.html"
                     >Devenir client</a
                   >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="#"
+                  <a rel="noopener noreferrer" href="./about.html"
                     >A propos de TICBOOSTER</a
                   >
                 </li>
@@ -398,6 +332,6 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script type="module" src="./../../JS/Acheteur/profil.js"></script>
+    <script type="module" src="./../JS/about.js"></script>
   </body>
 </html>

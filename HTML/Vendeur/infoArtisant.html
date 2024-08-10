@@ -3,153 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Création de service 2</title>
-    <link rel="stylesheet" href="./../../../CSS/style.css" />
+    <title>Information Artisant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link
       rel="shortcut icon"
-      href="./../../../image/logo.webp"
+      href="./../../image/logo.webp"
       type="image/x-icon"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* Add your custom styles here if needed */
-      .clearfix::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-    </style>
   </head>
+
+  <style>
+    .custom-button {
+      background-color: orange;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .custom-button:hover {
+      background-color: darkorange;
+    }
+  </style>
+
   <body class="bg-gray-100">
     <section class="bg-white shadow">
-      <header
-        class="container mx-auto flex justify-between items-center py-4 px-6"
-      >
-        <div class="flex items-center">
-          <a href="./profil.html">
-            <img src="./../../../image/logo.webp" alt="Logo" class="h-10" />
-          </a>
-        </div>
-        <div class="relative">
-          <div class="flex items-center cursor-pointer group">
-            <i class="fas fa-user text-2xl text-gray-700"></i>
-            <div
-              class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <button
-                id="logout"
-                class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-              >
-                Déconnexion
-              </button>
+      <header class="bg-white shadow-md">
+        <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex-1 md:flex md:items-center md:gap-12">
+              <a class="block text-teal-600" href="./../page_produit.html">
+                <img
+                  src="./../../image/logo.webp"
+                  class="mr-3 h-6 sm:h-12"
+                  alt="Logo"
+                />
+              </a>
+            </div>
+
+            <div class="md:flex md:items-center md:gap-12 flex">
+              <nav aria-label="Global" class="hidden md:block">
+                <div class="flex items-center gap-6 text-sm">
+                  <input
+                    type="text"
+                    id="search"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full lg:w-96 p-2.5"
+                    placeholder="Rechercher..."
+                    required
+                  />
+                </div>
+              </nav>
+
+              <div class="relative flex items-center gap-4 group">
+                <button class="flex items-center text-sm focus:outline-none">
+                  <i class="fas fa-user-circle text-2xl"></i>
+                  <span
+                    class="ml-2 text-sm font-medium text-gray-900 dark:text-white"
+                  ></span>
+                  <svg
+                    class="w-4 h-4 ml-1 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.707a1 1 0 011.414 0L10 11.086l3.293-3.379a1 1 0 011.414 1.414l-4 4.1a1 1 0 01-1.414 0l-4-4.1a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                <div
+                  id="userMenu"
+                  class="absolute right-0 mt-2 w-48 bg-white border mt-32 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                >
+                  <a
+                    href="./historique.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Historique</a
+                  >
+                  <a
+                    href="./../client/incription.html"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Devenir Artisant</a
+                  >
+                  <span
+                    id="logout"
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >Deconnexion</span
+                  >
+                </div>
+              </div>
+
+              <div class="block md:hidden">
+                <button
+                  class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                  id="searchToggle"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </header>
     </section>
+    <a href="./../"></a>
+    <div class="container mx-auto p-4">
+      <h1 class="text-3xl font-semibold mb-6 underline-green">
+        Services de l'artisant
+      </h1>
 
-    <main class="clearfix">
-      <div class="container mx-auto py-4">
-        <a
-          href="javascript:history.back()"
-          class="flex items-center text-orange-500 hover:text-orange-700"
-        >
-          <i class="fas fa-arrow-left mr-2"></i>
-          Retour
-        </a>
+      <div class="flex flex-wrap -mx-2">
+        <div class="w-full lg:w-1/4 p-2" id="profile"></div>
+        <div class="w-full lg:w-3/4 flex flex-wrap" id="services"></div>
       </div>
-      <section
-        class="max-w-screen-xl mx-auto py-4 px-4 sm:px-6 lg:px-8"
-      ></section>
-
-      <!-- Product code -->
-      <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
-        <h1 class="text-xl font-semibold mb-6 text-center">
-          CREATION DE SERVICE
-        </h1>
-
-        <h2 class="text-lg font-semibold mb-4 text-center text-orange-500">
-          Détails du service
-        </h2>
-        <form id="form">
-          <div class="mb-4 flex items-center space-x-4">
-            <label for="name" class="text-gray-700 font-medium w-1/4"
-              >Titre</label
-            >
-            <input
-              type="text"
-              id="name"
-              class="w-3/4 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder="name"
-            />
-          </div>
-
-          <div class="mb-8 flex items-center space-x-4">
-            <div class="w-3/4 flex flex-col space-y-4"></div>
-          </div>
-
-          <div class="mb-4 flex items-center space-x-4">
-            <label for="description" class="text-gray-700 font-medium w-1/4"
-              >Description</label
-            >
-            <textarea
-              id="description"
-              rows="4"
-              class="w-3/4 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder="Description"
-            ></textarea>
-          </div>
-
-          <div class="mb-4 flex items-center space-x-4">
-            <label for="price" class="text-gray-700 font-medium w-1/4"
-              >Prix (FCFA)</label
-            >
-            <input
-              type="number"
-              id="price"
-              class="w-1/4 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder="price"
-            />
-          </div>
-
-          <div class="mb-4 flex items-center space-x-4">
-            <label for="duration" class="text-gray-700 font-medium w-1/4"
-              >Durée De Confection</label
-            >
-            <input
-              type="text"
-              id="duration"
-              class="w-1/4 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
-              placeholder="duration"
-            />
-          </div>
-
-          <div class="text-right">
-            <a
-              href="./creation-produit3.html"
-              class="text-white hover:underline"
-            >
-              <button
-                type="submit"
-                class="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600"
-              >
-                VALIDER
-              </button>
-            </a>
-          </div>
-        </form>
-      </div>
-    </main>
-
+    </div>
     <section class="bg-white mt-4">
       <footer
         class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
@@ -159,11 +152,7 @@
         >
           <div class="lg:w-1/4 flex flex-col items-center lg:items-start">
             <a rel="noopener noreferrer" href="#" class="flex justify-center">
-              <img
-                src="../../../image/logo.webp"
-                class="w-22 h-20"
-                alt="Logo"
-              />
+              <img src="./../../image/logo.webp" class="w-22 h-20" alt="Logo" />
             </a>
             <div class="flex justify-center space-x-4 mt-4 ml-4">
               <a
@@ -254,21 +243,19 @@
                 TicBooster
               </h3>
               <ul class="space-y-1">
-                <li><a rel="noopener noreferrer" href=".">Nos valeurs</a></li>
+                <li><a rel="noopener noreferrer" href="">Nos valeurs</a></li>
                 <li>
-                  <a
-                    rel="noopener noreferrer"
-                    href="./../../client/connexion.html"
+                  <a rel="noopener noreferrer" href="./../client/connexion.html"
                     >Devenir vendeur</a
                   >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="./../../login.html"
+                  <a rel="noopener noreferrer" href="./../login.html"
                     >Devenir client</a
                   >
                 </li>
                 <li>
-                  <a rel="noopener noreferrer" href="./../../about.html"
+                  <a rel="noopener noreferrer" href="./../about.html"
                     >A propos de TICBOOSTER</a
                   >
                 </li>
@@ -304,9 +291,6 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script
-      type="module"
-      src="./../../../JS/Vendeur/creationProduit.js"
-    ></script>
+    <script type="module" src="./../../JS/Acheteur/infoArtisant.js"></script>
   </body>
 </html>

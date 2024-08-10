@@ -5,7 +5,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const firstnameInput = document.getElementById("firstname");
   const lastnameInput = document.getElementById("lastname");
   const jobInput = document.getElementById("job");
-  const categoryInput = document.getElementById("categoryId");
   const passwordInput = document.getElementById("passwordArtisant");
   const getLocationBtn = document.getElementById("getLocation");
   const emailInput = document.getElementById("email");
@@ -70,25 +69,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fonction pour valider la catégorie
-  function validateCategory() {
-    const categoryError = document.getElementById("categoryError");
-
-    if (categoryInput.value === "") {
-      categoryError.classList.remove("hidden");
-      categoryError.textContent = "Veuillez choisir une catégorie.";
-      return false;
-    } else {
-      categoryError.classList.add("hidden");
-      categoryError.textContent = "";
-      return true;
-    }
-  }
 
   // Validation en temps réel
   phoneInput.addEventListener("input", validatePhoneNumber);
   passwordInput.addEventListener("input", validatePassword);
   jobInput.addEventListener("input", validateJob);
-  categoryInput.addEventListener("change", validateCategory);
   emailInput.addEventListener("input", validateEmail);
 
   // Affichage et masquage du mot de passe
@@ -135,16 +120,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const isPhoneValid = validatePhoneNumber();
       const isPasswordValid = validatePassword();
       const isJobValid = validateJob();
-      const isCategoryValid = validateCategory();
       const isEmailValid = validateEmail();
 
       // Vérifier si tous les champs sont valides
       const isValid =
-        isPhoneValid &&
-        isPasswordValid &&
-        isJobValid &&
-        isCategoryValid &&
-        isEmailValid;
+        isPhoneValid && isPasswordValid && isJobValid && isEmailValid;
 
       if (!isValid) return;
 
@@ -155,7 +135,6 @@ window.addEventListener("DOMContentLoaded", () => {
           email: emailInput.value,
           phoneNumber: phoneInput.value,
           passwordArtisant: passwordInput.value,
-          categoryId: categoryInput.value,
           job: jobInput.value,
           lat: document.getElementById("lat").value,
           long: document.getElementById("long").value,

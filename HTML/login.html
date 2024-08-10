@@ -1,96 +1,431 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connexion TicBooster client</title>
+    <title>Tous les produits</title>
+    <link rel="stylesheet" href="./../../CSS/style.css" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
     <link rel="shortcut icon" href="./../image/logo.webp" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <style>
-      .hidden {
-        display: none;
-      }
-    </style>
+
+    <style></style>
   </head>
   <body class="bg-gray-100">
-    <div class="min-h-screen flex items-center justify-center px-4">
-      <div
-        class="max-w-4xl w-full bg-white shadow-md rounded-lg overflow-hidden flex flex-col md:flex-row"
-      >
-        <div class="md:w-1/2">
-          <img
-            class="h-full w-full object-cover object-contain object-center"
-            src="./../image/login-vendeur.jpg"
-            alt="Woodworking"
-          />
-        </div>
-        <div class="md:w-1/2 p-8">
-          <div class="flex items-center justify-center mb-6">
-            <img
-              class="h-12 w-auto"
-              src="./../image/logoticbooster_1.webp"
-              alt="TicBooster Logo"
-            />
+    <header class="bg-white shadow-md">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex-1 md:flex md:items-center md:gap-12">
+            <a class="block text-teal-600" href="./page_produit.html">
+              <img
+                src="./../image/logo.webp"
+                class="mr-3 h-6 sm:h-12"
+                alt="Logo"
+              />
+            </a>
           </div>
 
-          <form id="loginForm">
-            <div class="mb-4">
-              <label for="phone" class="block text-gray-700 mb-2"
-                >Numéro de téléphone</label
-              >
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2"
-                placeholder="+2250102030405"
-              />
-              <span id="phoneError" class="text-red-500 text-sm hidden"
-                >Numéro de téléphone invalide</span
-              >
-            </div>
-            <div class="mb-4 relative">
-              <label for="password" class="block text-gray-700 mb-2"
-                >Mot de passe</label
-              >
-              <input
-                type="password"
-                id="password"
-                name="password"
-                class="w-full border border-gray-300 rounded-lg px-4 py-2 pr-10"
-                placeholder="********"
-              />
-              <button
-                type="button"
-                id="togglePassword"
-                class="absolute mt-8 inset-y-0 right-0 px-3 py-2 text-gray-600 hover:text-gray-800"
-              >
-                <i data-lucide="eye"></i>
+          <div class="md:flex md:items-center md:gap-12 flex">
+            <nav aria-label="Global" class="hidden md:block">
+              <div class="flex items-center gap-6 text-sm">
+                <input
+                  type="text"
+                  id="search"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full lg:w-96 p-2.5"
+                  placeholder="Rechercher..."
+                  required
+                />
+              </div>
+            </nav>
+
+            <div class="relative flex items-center gap-4 group z-index-100">
+              <button class="flex items-center text-sm focus:outline-none">
+                <i class="fas fa-user-circle text-2xl"></i>
+                <span
+                  id="profile"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-white"
+                ></span>
+                <svg
+                  class="w-4 h-4 ml-1 text-gray-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.707a1 1 0 011.414 0L10 11.086l3.293-3.379a1 1 0 011.414 1.414l-4 4.1a1 1 0 01-1.414 0l-4-4.1a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
               </button>
-              <div id="passwordError" class="text-red-500 text-sm hidden"></div>
-            </div>
-            <button
-              type="submit"
-              class="w-full bg-green-600 text-white rounded-lg px-4 py-2"
-            >
-              Connexion
-            </button>
-            <div class="text-center mt-4 text-gray-500">
-              <a href="#" class="hover:underline">Mot de passe oublié</a>
-            </div>
-            <div class="text-center mt-2">
-              <span>Vous n'avez pas de compte ?</span>
-              <a href="./signup.html" class="text-green-600 hover:underline"
-                >Créer un compte</a
+              <div
+                id="userMenu"
+                class="absolute right-0 mt-2 w-48 bg-white border mt-32 border-gray-200 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
+                <a
+                  href="./../HTML/Vendeur/historique.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Historique</a
+                >
+                <a
+                  href="./../HTML/client/incription.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Devenir Artisant</a
+                >
+                <span
+                  id="logout"
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >Deconnexion</span
+                >
+              </div>
             </div>
-          </form>
+
+            <div class="block md:hidden">
+              <button
+                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                id="searchToggle"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+    </header>
+
+    <div
+      id="mobileSearchContainer"
+      class="lg:hidden hidden justify-between items-center w-full"
+    >
+      <input
+        type="text"
+        id="search-mobile"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 transform -translate-y-full transition-transform duration-300"
+        placeholder="Rechercher..."
+        required
+      />
     </div>
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <section class="container mx-auto p-6 text-center w-full mb-8">
+      <div class="py-4">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/agro1-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Agroalimentaire, Restauration</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/construction-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Construction et Bâtiment</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/mecanic-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Mécanique, Électromécanique</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/mobilier-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Mobilier et Ameublement</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/textile-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Textile, Habillement</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/camera-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Audiovisuel et Communication</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/hygiene-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Hygiène et Soins Corporels</p>
+            </div>
+            <div
+              class="text-center flex flex-col items-center bg-gray-200 rounded-lg p-4"
+            >
+              <img
+                src="./../image/Categorie/art-removebg-preview.png"
+                alt="Hygiène et Soins Corporels"
+                class="mx-auto mb-2 w-12 h-12"
+              />
+              <p class="text-sm font-medium">Art et Décoration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="text-center py-8">
+      <div
+        class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4"
+        id="services"
+      >
+        <!--  All Services  -->
+      </div>
+    </section>
+
+    <section class="text-center p-4 mb-8 container mx-auto">
+      <h2 class="text-3xl text-orange-500 font-bold mb-6">Témoignages</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="relative bg-orange-500 text-white rounded-lg overflow-hidden shadow-lg"
+        >
+          <img
+            src="./../image/banner/banner1.jpg"
+            alt="M. AKA"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="relative bg-green-600 text-white rounded-lg overflow-hidden shadow-lg"
+        >
+          <img
+            src="./../image/banner/banner2.jpg"
+            alt="Mlle Assemian"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div
+          class="relative bg-orange-500 text-white rounded-lg overflow-hidden shadow-lg"
+        >
+          <img
+            src="./../image/banner/banner1.jpg"
+            alt="M. KOFFI"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section class="bg-white mt-4">
+      <footer
+        class="px-4 dark:bg-gray-100 dark:text-gray-800 container mx-auto"
+      >
+        <div
+          class="container flex flex-col justify-between py-8 mx-auto space-y-6 lg:flex-row lg:space-y-0"
+        >
+          <div class="lg:w-1/4 flex flex-col items-center lg:items-start">
+            <a rel="noopener noreferrer" href="#" class="flex justify-center">
+              <img src="./../image/logo.webp" class="w-22 h-20" alt="Logo" />
+            </a>
+            <div class="flex justify-center space-x-4 mt-4 ml-4">
+              <a
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/profile.php?id=61562709172775
+                "
+                title="Facebook"
+                class="text-blue-600"
+              >
+                <i class="fab fa-facebook-f fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.instagram.com/36entreprise/"
+                title="Instagram"
+                class="text-pink-600"
+              >
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="https://vm.tiktok.com/ZMrxegXWT/
+                "
+                title="TikTok"
+                class="text-black"
+              >
+                <i class="fab fa-tiktok fa-lg"></i>
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href="https://whatsapp.com/channel/0029VakFkE97IUYXZAJLRQ3G
+                "
+                title="WhatsApp"
+                class="text-green-500"
+              >
+                <i class="fab fa-whatsapp fa-lg"></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 text-sm gap-x-3 gap-y-6 lg:w-3/4 sm:grid-cols-3"
+          >
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                Categories
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Agroalimentaire, Restauration</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Construction et Bâtiment</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mécanique, Électronique</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Mobilier et Ameublement</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Textile, Habillement</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Audiovisuel, Communication</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >Hygiène et soins corporels</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#">Art et décoration</a>
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="tracking-wide uppercase dark:text-gray-900 font-bold">
+                TicBooster
+              </h3>
+              <ul class="space-y-1">
+                <li><a rel="noopener noreferrer" href="#">Nos valeurs</a></li>
+                <li>
+                  <a
+                    rel="noopener noreferrer"
+                    href="./../HTML/client/connexion.html"
+                    >Devenir vendeur</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="./../HTML/login.html"
+                    >Devenir client</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="./about.html"
+                    >A propos de TICBOOSTER</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="space-y-3">
+              <h3 class="uppercase dark:text-gray-900 font-bold">
+                Statistiques
+              </h3>
+              <ul class="space-y-1">
+                <li>
+                  <a rel="noopener noreferrer" href="#">10 000 vendeurs</a>
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >27 000 commandes en cours</a
+                  >
+                </li>
+                <li>
+                  <a rel="noopener noreferrer" href="#"
+                    >15 000 000 commandes effectuées</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="py-4 text-sm text-center border-t border-gray-200">
+          <p class="mt-2">Copyright TICBOOSTER 2024</p>
+        </div>
+      </footer>
+    </section>
+
+    <script>
+      document
+        .getElementById("searchToggle")
+        .addEventListener("click", function () {
+          const searchMobile = document.getElementById("search-mobile");
+          const mobileSearchContainer = document.getElementById(
+            "mobileSearchContainer"
+          );
+
+          // Toggle the display of the search input
+          if (searchMobile.classList.contains("-translate-y-full")) {
+            searchMobile.classList.remove("-translate-y-full");
+            mobileSearchContainer.classList.remove("hidden");
+          } else {
+            searchMobile.classList.add("-translate-y-full");
+            mobileSearchContainer.classList.add("hidden");
+          }
+        });
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="module" src="./../JS/Connexion/connexion.js"></script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="module" src="./../JS/about.js"></script>
   </body>
 </html>
