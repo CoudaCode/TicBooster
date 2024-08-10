@@ -43,11 +43,11 @@ const fetchApiBase = async (endpoint, options = {}, isAuth, isImage) => {
   }
 };
 
-// const BASE_URL_API_DEV = "https://tickbooster-backend.onrender.com/api";
-const BASE_URL_API_DEV = "http://localhost:4000/api";
+const BASE_URL_API_DEV = "https://tickbooster-backend.onrender.com/api";
+// const BASE_URL_API_DEV = "http://localhost:4000/api";
 
-// const BASE_URL_LINK_DEV = "https://coudacode.github.io/TicBooster";
-const BASE_URL_LINK_DEV = "http://127.0.0.1:5500";
+const BASE_URL_LINK_DEV = "https://coudacode.github.io/TicBooster";
+// const BASE_URL_LINK_DEV = "http://127.0.0.1:5500";
 
 const checkValidTokenArtisant = async (token) => {
   try {
